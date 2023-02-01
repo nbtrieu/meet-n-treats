@@ -16,13 +16,13 @@ function PlayDatePage() {
         <div>
             <h1>Schedule a Play Date</h1>
             <form onSubmit={handleSubmit}>
-                <h2>Pet 1</h2>
+                {/* <h2>Pet 1</h2>
                 <input
                     type="text"
                     value={pet1}
                     onChange={(e) => setPet1(e.target.value)}
                     placeholder="Enter pet name or username"
-                />
+                /> */}
                 <h2>Pet 2</h2>
                 <input
                     type="text"
