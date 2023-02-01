@@ -8,7 +8,7 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Login from "./components/Login/_index";
+import Login from "./components/Login/index";
 import Register from "./components/Register";
 
 const httpLink = createHttpLink({
