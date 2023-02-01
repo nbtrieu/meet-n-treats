@@ -36,23 +36,26 @@ function Register() {
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
+          placeholder="Your username"
           name="name"
           value={formState.name}
           onChange={handleInputChange}
         />
         <input
           type="email"
+          placeholder="Your email"
           name="email"
           value={formState.email}
           onChange={handleInputChange}
         />
         <input
           type="password"
+          placeholder="******"
           name="password"
           value={formState.password}
           onChange={handleInputChange}
         />
-        <button type="submit">Register User</button>
+        <button type="submit">Sign up</button>
       </form>
     </div>
   );
