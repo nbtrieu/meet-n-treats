@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
+import Login from "../../components/Login";
 
 function CreatePostPage() {
+  const [postContent, setPostContent] = useState("");
+  const [postImage, setPostImage] = useState("");
+
   const { loading, data } = useQuery(QUERY_ME);
   const me = data?.me || []; 
   console.log('me: ', me);
@@ -11,7 +17,9 @@ function CreatePostPage() {
     )
   }
 
-  const [postContent, setPostContent] = useState("");
+  const handleImageChange = (e) => {
+    setPostImage(e.target.files[0]);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +37,9 @@ function CreatePostPage() {
           onChange={(e) => setPostContent(e.target.value)}
           placeholder="Enter post content"
         />
+        <br />
+        <input type="file" onChange={handleImageChange} />
+        <br />
         <button type="submit">Post</button>
       </form>
     </div>
