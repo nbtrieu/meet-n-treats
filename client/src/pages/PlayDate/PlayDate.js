@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
+
+import Login from "../../components/Login";
 
 function PlayDatePage() {
     const { loading, data } = useQuery(QUERY_ME);
