@@ -3,16 +3,6 @@ import Sidebar from "../../components/Sidebar";
 import Nav from "../../components/Nav";
 
 function ExplorePage() {
-    const { loading, data } = useQuery(QUERY_ME);
-    const me = data?.me || []; 
-    console.log('me: ', me);
-
-    if (me.length === 0) {
-         return (
-        <Login />
-    )
-    }
-
     return(
         <div>
             <Sidebar>
