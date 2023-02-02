@@ -1,78 +1,68 @@
-import { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../../utils/mutations";
+.app-login_page__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 
-import Auth from "../../utils/auth.js";
-import "./login.css";
-import image from '../../assets/background.png';
-
-
-function Login() {
-  const [formState, setFormState] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [Login, { error, data }] = useMutation(LOGIN_USER);
-
-  const handleInputChange = ({ target: { name, value } }) => {
-    setFormState({ ...formState, [name]: value });
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const { data } = await Login({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.login.token);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  return (     
-      <div className="app-login_page">
-          <div className='app-landing_page__container__header-title'>
-                <h1>PAWSWIPE</h1>
-            </div>
-            <hr className="lin"></hr>
-        <div className="app-login_page__container" style={{backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            height: "70vh",
-            width: "98vw",
-            opacity: "0.9",
-
-      }}> 
-          <h1>Sign In</h1>
-          <form onSubmit={handleFormSubmit}>
-              <label htmlFor="email">Username</label>
-              <input
-                type="email"
-                name="email"
-                value={formState.email}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                value={formState.password}
-                onChange={handleInputChange}
-              />
-              <button className="login" type="submit">Login</button>
-            </form>
-
-
-          {/* <div className="app-login_page__container__header">
-            </div> */}
-            </div>
-
-
-        </div>
-  );
 }
 
-export default Login;
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 30vw;
+    
+}
+@media only screen and (max-width: 600px) {
+
+    form{
+        width: 80vw;
+    }
+}
+form input{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 9px;
+    border: 2px solid #000000;
+    outline: none;
+    min-width: 12rem;
+}
+form label{
+    margin:0 1rem;
+}
+form button{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 9px;
+    border: 2px solid #000000;
+    outline: none;
+    cursor: pointer;
+    background-color: #000000;
+    color: #FFFFFF;
+    width: 8rem;
+    height: 2.75rem;
+    
+}
+.app-landing_page__container__header-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+.lin{
+    margin-bottom: 1rem;
+}
+.app-landing_page__container__header-title h1{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 4.8125rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
