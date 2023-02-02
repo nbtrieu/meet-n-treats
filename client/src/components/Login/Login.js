@@ -35,7 +35,6 @@ function Login() {
   return (     
       <div className="app-login_page">
           <div className='app-landing_page__container__header-title'>
-                <h1>PAWSWIPE</h1>
             </div>
             <hr className="lin"></hr>
         <div className="app-login_page__container" style={{backgroundImage: `url(${image})`,
@@ -62,7 +61,7 @@ function Login() {
                 value={formState.password}
                 onChange={handleInputChange}
               />
-              <button className="login" type="submit">Login</button>
+              <button id="loginBtn" className="login" type="submit">Login</button>
             </form>
             <h3>
               Don't have an account?
