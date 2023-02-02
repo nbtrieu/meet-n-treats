@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
+import Login from "../../components/Login";
 
 function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
-    const { loading, data } = useQuery(QUERY_ME);
+  const [petName, setPetName] = useState(currentUserPet);
+
+  const { loading, data } = useQuery(QUERY_ME);
   const me = data?.me || []; 
   console.log('me: ', me);
 
@@ -10,8 +15,6 @@ function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
       <Login />
     )
   }
-  
-  const [petName, setPetName] = useState(currentUserPet);
 
   const handleUpdatePetName = (e) => {
     e.preventDefault();
@@ -21,8 +24,8 @@ function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
 
   return (
     <div>
-      <h1>{currentUser}'s Profile</h1>
-      <h2>Pet: {currentUserPet}</h2>
+      {/* <h1>{currentUser}'s Profile</h1> */}
+      {/* <h2>Pet: {currentUserPet}</h2> */}
       <form onSubmit={handleUpdatePetName}>
         <label>
           Change Pet Name:
@@ -35,12 +38,12 @@ function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
         <button type="submit">Update</button>
       </form>
       <h2>Posts</h2>
-      {posts.map((post) => (
+      {/* {posts.map((post) => (
         <div key={post.id}>
           <p>{post.content}</p>
           <p>{post.date}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }

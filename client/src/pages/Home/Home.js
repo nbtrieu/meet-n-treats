@@ -1,7 +1,4 @@
 import { useQuery } from "@apollo/client";
-
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Nav from "../../components/Nav/Nav";
 import Login from "../../components/Login";
 
 import { QUERY_ME } from "../../utils/queries";
@@ -19,9 +16,7 @@ function Home() {
 
   return (
     <div>
-      <Sidebar>
-        <Nav></Nav>
-      </Sidebar>
+      {/* TODO: add post from database */}
     </div>
   );
 }

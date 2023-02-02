@@ -1,6 +1,11 @@
 import React, {useState} from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
+import Login from "../../components/Login";
 
 function SearchPage() {
+    const [searchTerm, setSearchTerm] = useState("");
+
     const { loading, data } = useQuery(QUERY_ME);
     const me = data?.me || []; 
     console.log('me: ', me);
@@ -10,8 +15,6 @@ function SearchPage() {
         <Login />
       )
     }
-
-    const [searchTerm, setSearchTerm] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();

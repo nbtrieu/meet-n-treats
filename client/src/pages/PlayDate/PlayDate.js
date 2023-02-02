@@ -5,6 +5,11 @@ import { QUERY_ME } from "../../utils/queries";
 import Login from "../../components/Login";
 
 function PlayDatePage() {
+    const [pet1, setPet1] = useState("");
+    const [pet2, setPet2] = useState("");
+    const [location, setLocation] = useState("");
+    const [activity, setActivity] = useState("");
+
     const { loading, data } = useQuery(QUERY_ME);
     const me = data?.me || []; 
     console.log('me: ', me);
@@ -14,11 +19,6 @@ function PlayDatePage() {
         <Login />
     )
   }
-
-    const [pet1, setPet1] = useState("");
-    const [pet2, setPet2] = useState("");
-    const [location, setLocation] = useState("");
-    const [activity, setActivity] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
