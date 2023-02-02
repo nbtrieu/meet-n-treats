@@ -1,0 +1,138 @@
+.app-landing_page__container__header-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-landing_page__container__header-title h1{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 4.8125rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.app-landing_page__container__header-background-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    
+}
+
+.app-landing_page__container__header-background__text{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 4rem;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 3rem;
+}
+.btn{
+    padding: .6rem;
+    width: 6rem;
+    height: 4rem;
+    color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 5px;
+    border: none;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+.app-landing_page__container__header-background__btn{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+.line{
+    width: 98vw;
+    height: 2px;
+    background-color: #000000;
+    margin-top: 3rem;
+}
+.lines{
+    width: 98vw;
+    height: 2px;
+    background-color: #000000;
+    margin-top: 3rem;
+}
+.linee{
+    width: 98vw;
+    height: 2px;
+    background-color: #000000;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.images{
+    width: 40vw;
+    height: 50vh;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+.imagess{
+    width: 40vw;
+    height: 50vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    float: right;
+}
+.App-feature-3{
+    margin-top: 3rem;
+}
+.fill-img-1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.fill-img-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.app-landing_page{
+    width: 98vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .fill-img-2{
+      
+        text-align: center;
+    }
+    .fill-img-1{
+        text-align: center;
+      
+    }
+    .images{
+        width: 70vw;
+        height: 30vh;
+        margin-top: 2rem;
+        margin-right: 3rem;
+    }
+    .imagess{
+        width: 70vw;
+        margin-right: .1rem;
+        height: 30vh;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+  }
+
+
+
+
+.feature{
+    width: 40vw;
+    text-align: center;
+}
+.feature-2{
+    width: 40vw;
+    text-align: center;
+}
