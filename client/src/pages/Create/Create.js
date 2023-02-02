@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 
 function CreatePostPage() {
+  const { loading, data } = useQuery(QUERY_ME);
+  const me = data?.me || []; 
+  console.log('me: ', me);
+
+  if (me.length === 0) {
+    return (
+      <Login />
+    )
+  }
+
   const [postContent, setPostContent] = useState("");
 
   const handleSubmit = (e) => {

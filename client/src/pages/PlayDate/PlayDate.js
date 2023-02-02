@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 
 function PlayDatePage() {
+    const { loading, data } = useQuery(QUERY_ME);
+    const me = data?.me || []; 
+    console.log('me: ', me);
+
+    if (me.length === 0) {
+        return (
+        <Login />
+    )
+  }
+
     const [pet1, setPet1] = useState("");
     const [pet2, setPet2] = useState("");
     const [location, setLocation] = useState("");

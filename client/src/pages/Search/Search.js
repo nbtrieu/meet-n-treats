@@ -1,6 +1,16 @@
 import React, {useState} from "react";
 
 function SearchPage() {
+    const { loading, data } = useQuery(QUERY_ME);
+    const me = data?.me || []; 
+    console.log('me: ', me);
+  
+    if (me.length === 0) {
+      return (
+        <Login />
+      )
+    }
+
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleSubmit = (event) => {
