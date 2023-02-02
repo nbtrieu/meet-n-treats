@@ -172,7 +172,23 @@ form input{
 form label{
   margin:0 1rem;
 }
-form button{
+
+#loginBtn {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 9px;
+  border: 2px solid #000000;
+  outline: none;
+  cursor: pointer;
+  background-color: #000000;
+  color: #FFFFFF;
+  width: 10rem;
+  height: 2.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form button #loginBtn{
   margin: 1rem;
   padding: 1rem;
   border-radius: 9px;
@@ -183,8 +199,8 @@ form button{
   color: #FFFFFF;
   width: 8rem;
   height: 2.75rem;
-  
-}
+} */
+
 .app-landing_page__container__header-title{
   display: flex;
   justify-content: center;
@@ -204,4 +220,15 @@ form button{
   align-items: center;
   text-align: center;
   color: #000000;
+}
+
+/* Calendar */
+.today-tile {
+  background-color: #ffc107 !important;
+  border: 2px solid #333 !important;
+}
+
+.selected-tile {
+  background-color: aquamarine !important;
+  border: 2px solid #333 !important;
 }
