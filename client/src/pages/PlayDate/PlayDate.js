@@ -49,3 +49,5 @@ function PlayDatePage() {
         </div>
     );
 }
+
+export default PlayDatePage;
