@@ -1,28 +1,37 @@
-import { useQuery } from "@apollo/client";
-
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Nav from "../../components/Nav/Nav";
-import Login from "../../components/Login";
-
-import { QUERY_ME } from "../../utils/queries";
+import Sidebar from "../../components/Sidebar";
+// import Nav from "../../components/Nav";
+import { useState } from "react";
+import LandingPage from "../../components/LandingPage/LandingPage";
 
 function Home() {
-  const { loading, data } = useQuery(QUERY_ME);
-  const me = data?.me || []; // *QUESTION: Why set to empty array instead of empty object? To avoid null or undefined references
-  console.log('me: ', me);
+  const [pages] = useState([
+    { name: 'Home' },
+    { name: 'Search' },
+    { name: 'Explore' },
+    { name: 'Play Dates' },
+    { name: 'Create' },
+    { name: 'Profiles' },
+    { name: 'Marketplace' },
+    { name: 'Adoptions' }
+  ]);
 
-  if (me.length === 0) {
-    return (
-      <Login />
-    )
-  }
+  const [currentPage, setCurrentPage] = useState(pages[0]);
 
   return (
     <div>
-      <Sidebar>
-        <Nav></Nav>
-      </Sidebar>
+      {/* <h1>Home Page</h1> */}
+      {/* <Sidebar>
+        <Nav
+          pages={pages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        ></Nav>
+      </Sidebar> */}
+
+      <LandingPage />
+
     </div>
+
   );
 }
 
