@@ -18,6 +18,22 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  pet: {
+    type: Schema.Types.ObjectId,
+    ref: 'Pet',
+  },
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Post',
+    },
+  ],
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Comment',
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {
