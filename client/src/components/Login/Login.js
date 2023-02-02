@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import { Link } from 'react-router-dom';
 
 import Auth from "../../utils/auth.js";
-import "./login.css";
 import image from '../../assets/background.png';
 
 
@@ -48,22 +48,31 @@ function Login() {
       }}> 
           <h1>Sign In</h1>
           <form onSubmit={handleFormSubmit}>
-              <label htmlFor="email">Username</label>
               <input
                 type="email"
+                placeholder="Your Email"
                 name="email"
                 value={formState.email}
                 onChange={handleInputChange}
               />
-              <label htmlFor="password">Password</label>
               <input
                 type="password"
+                placeholder="********"
                 name="password"
                 value={formState.password}
                 onChange={handleInputChange}
               />
               <button className="login" type="submit">Login</button>
             </form>
+            <h3>
+              Don't have an account?
+              <Link className="text-dark" to="/register">Sign up</Link>
+            </h3>
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
 
 
           {/* <div className="app-login_page__container__header">
