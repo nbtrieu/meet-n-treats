@@ -1,6 +1,7 @@
 import React from "react";
-import Sidebar from "../../components/Sidebar";
-import Nav from "../../components/Nav";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries";
+import Login from "../../components/Login";
 
 function ExplorePage() {
     const { loading, data } = useQuery(QUERY_ME);
@@ -15,10 +16,6 @@ function ExplorePage() {
 
     return(
         <div>
-            <Sidebar>
-                <Nav>
-                </Nav>
-            </Sidebar>
             
             <h1>Explore</h1>
             <p>Discover new pets and stay updated on your favorites</p>
