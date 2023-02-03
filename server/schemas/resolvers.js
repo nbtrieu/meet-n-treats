@@ -10,9 +10,15 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    // Query to search user by email:
     user: async (parent, { email }) => {
       return User.findOne({ email }).populate('pet').populate('posts').populate('comments');
+    // TODO: would be cool to search by username instead of email, but username doesn't have to be unique... have to figure out how to require unique username
     },
+    // Query to get all posts on the homepage (right??):
+    posts: async () => {
+      return Post.find().populate('comments');
+    }
   },
   Mutation: {
     register: async (parent, { name, email, password }) => {
@@ -36,6 +42,16 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addPost: async (parent, { postAuthor, postText }) => {
+      const post = await Post.create({ postAuthor, postText });
+
+      await User.findOneAndUpdate(
+        { name: postAuthor },
+        { $addToSet: { posts: post._id } }
+      );
+
+      return post;
+    }
   },
 };
 
