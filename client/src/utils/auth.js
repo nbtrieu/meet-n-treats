@@ -1,7 +1,7 @@
 import decode from "jwt-decode";
 
 class AuthService {
-  getProfile() {
+  getUser() {
     return decode(this.getToken());
   }
 
@@ -9,6 +9,7 @@ class AuthService {
     const token = this.getToken();
     return token ? true : false;
   }
+  // This function checks if local storage has the "auth_token"
 
   isTokenExpired(token) {
     // Decode the token to get its expiration time that was set by the server

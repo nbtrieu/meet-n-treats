@@ -6,19 +6,16 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { QUERY_ME } from "./utils/queries";
-// import Login from "./components/Login";
 
 import Home from "./pages/Home";
 import Create from "./pages/Create";
-import Explore from "./pages/Explore";
 import PlayDate from "./pages/PlayDate";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Explore from "./pages/Explore";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Nav from "./components/Nav/Nav";
 
