@@ -33,14 +33,24 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_POSTS = gql`
-  query posts {
-    _id
-    postText
-    createdAt
-    comments {
-      commentAuthor
-      commentText
+  query Posts {
+    posts {
+      _id
+      postAuthor {
+        name
+        _id
+      }
+      postText
       createdAt
+      comments {
+        _id
+        commentAuthor {
+          _id
+          name
+        }
+        commentText
+        createdAt
+      }
     }
   }
 `;

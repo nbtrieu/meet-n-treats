@@ -15,9 +15,9 @@ const resolvers = {
       return User.findOne({ email }).populate('pet').populate('posts').populate('comments');
     // TODO: would be cool to search by username instead of email, but username doesn't have to be unique... have to figure out how to require unique username
     },
-    // Query to get all posts on the homepage (right??):
+    // Query to get all posts on the homepage:
     posts: async () => {
-      return Post.find().populate('comments');
+      return Post.find().populate('comments').populate('postAuthor');
     }
   },
   Mutation: {
