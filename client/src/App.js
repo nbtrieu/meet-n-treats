@@ -12,6 +12,7 @@ import Create from "./pages/Create";
 import PlayDate from "./pages/PlayDate";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
+import SinglePost from "./pages/SinglePost/SinglePost";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -55,6 +56,7 @@ function App() {
             <Route path="/playdates" element={<PlayDate />} />
             <Route path="/profiles" element={<Profile />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/single-post" element={<SinglePost />} />
           </Routes>
         </div>
       </Router>

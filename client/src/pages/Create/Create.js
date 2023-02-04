@@ -58,6 +58,7 @@ function CreatePostPage() {
       });
       
       setPostText('');
+      window.location.replace('/');
     } catch (error) {
       console.error('>>> handleSubmit error: ', error);
     }
@@ -84,14 +85,14 @@ function CreatePostPage() {
         Character Count: {characterCount}/280
       </p>
       <form onSubmit={handleSubmit}>
+        <CloudinaryUploadWidget setPostImageURL={setPostImageURL} />
+        <br />
         <textarea
           name="postText"
           placeholder="Enter post text"
           value={postText}
           onChange={handleInputChange}
         />
-        <br />
-        <CloudinaryUploadWidget setPostImageURL={setPostImageURL} />
         <br />
         <button type="submit">Post</button>
       </form>
