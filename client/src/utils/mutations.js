@@ -25,3 +25,22 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_PLAYDATE = gql`
+  mutation CreatePlayDate($pet1: String!, $pet2: String!, $location: String!, $activity: String!, $date: String!) {
+    createPlayDate(data: {
+      pet1: $pet1,
+      pet2: $pet2,
+      location: $location,
+      activity: $activity,
+      date: $date
+    }) {
+      _id
+      pet1
+      pet2
+      location
+      activity
+      date
+    }
+  }
+`;

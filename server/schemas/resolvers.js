@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Comment, Post, Pet } = require("../models");
+const { User, Comment, Post, Pet, Playdate} = require("../models");
 const { signToken } = require("../utils/auth.js");
 
 const resolvers = {
@@ -13,6 +13,9 @@ const resolvers = {
     user: async (parent, { email }) => {
       return User.findOne({ email }).populate('pet').populate('posts').populate('comments');
     },
+    playdates: async (parent, args) => {
+      return Playdate.find({}).populate('pet1').populate('pet2');
+    }
   },
   Mutation: {
     register: async (parent, { name, email, password }) => {
@@ -35,6 +38,21 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+    addPlaydate: async (parent, { pet1, pet2, location, activity, date }) => {
+      const playdate = await Playdate.create({pet1, pet2, location, activity, date});
+      
+      await Pet.findOneAndUpdate(
+        { _id: pet1 },
+        { $push: { playdates: playdate._id}}
+      );
+
+      await Pet.findOneAndUpdate(
+        { _id: pet2 },
+        { $push: { playdates: playdate._id}}
+      );
+
+      return playdate;
     },
   },
 };

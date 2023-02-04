@@ -3,4 +3,5 @@ module.exports = {
   Pet: require("./Pet.js"),
   Post: require("./Post.js"),
   Comment: require("./Comment.js"),
+  Playdate: require("./Playdate"),
 };

@@ -38,6 +38,15 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Playdate {
+    _id: ID
+    pet1: Pet
+    pet2: Pet
+    location: String!
+    activity: String!
+    date: String!
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -46,11 +55,13 @@ const typeDefs = gql`
   type Query {
     me: User
     user(email: String!): User
+    playdates: [Playdate]
   }
 
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addPlaydate(pet1: ID!, pet2: ID!, location: String!, activity: String!, date: String!): Playdate
   }
 `;
 
