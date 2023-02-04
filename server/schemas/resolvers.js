@@ -18,7 +18,7 @@ const resolvers = {
     // Query to get all posts on the homepage:
     posts: async () => {
       return Post.find().populate('comments').populate('postAuthor');
-    }
+    },
   },
   Mutation: {
     register: async (parent, { name, email, password }) => {
@@ -42,8 +42,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addPost: async (parent, { postAuthor, postText }) => {
-      const post = await Post.create({ postAuthor, postText });
+    addPost: async (parent, { postAuthor, postText, postImageURL }) => {
+      const post = await Post.create({ postAuthor, postText, postImageURL });
 
       await User.findOneAndUpdate(
         { name: postAuthor },

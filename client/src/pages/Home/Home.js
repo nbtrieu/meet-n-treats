@@ -26,7 +26,6 @@ function Home() {
 
   return (
     <div>
-      <h4>Something</h4>
       {posts && 
         posts.map((post) => (
           <div key={post._id}>

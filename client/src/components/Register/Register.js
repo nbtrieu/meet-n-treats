@@ -11,6 +11,8 @@ function Register() {
     password: "",
   });
 
+  // const [registerError, setRegisterError] = useState('');
+
   const [register, { error, data }] = useMutation(REGISTER_USER);
 
   const handleInputChange = ({ target: { name, value } }) => {
@@ -26,8 +28,9 @@ function Register() {
       });
       console.log(data);
       Auth.login(data.register.token);
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      // setRegisterError(error);
+      console.error(error);
     }
   };
   return (
@@ -57,6 +60,11 @@ function Register() {
         />
         <button type="submit">Sign up</button>
       </form>
+      {error && (
+        <div className="text-danger">
+          Invalid credentials
+        </div>
+      )}
     </div>
   );
 }

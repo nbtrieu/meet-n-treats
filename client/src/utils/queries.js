@@ -51,6 +51,7 @@ export const QUERY_POSTS = gql`
         commentText
         createdAt
       }
+      postImageURL
     }
   }
 `;

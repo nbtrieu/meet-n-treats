@@ -28,9 +28,10 @@ export const LOGIN_USER = gql`
 
 // QUESTION: Do I need to put commentAuthor?
 export const ADD_POST = gql`
-  mutation AddPost($postText: String!, $postAuthor: ID!) {
-    addPost(postText: $postText, postAuthor: $postAuthor) {
+  mutation AddPost($postText: String!, $postAuthor: ID!, $postImageURL: String!) {
+    addPost(postText: $postText, postAuthor: $postAuthor, postImageURL: $postImageURL) {
       _id
+      postImageURL
       postText
     }
   }
