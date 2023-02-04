@@ -56,7 +56,7 @@ function App() {
             <Route path="/playdates" element={<PlayDate />} />
             <Route path="/profiles" element={<Profile />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/single-post" element={<SinglePost />} />
+            <Route path="/posts/:postId" element={<SinglePost />} />
           </Routes>
         </div>
       </Router>

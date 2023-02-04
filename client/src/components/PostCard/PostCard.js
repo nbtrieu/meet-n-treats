@@ -11,9 +11,9 @@ export default function PostCard(props) {
       <img id="uploadedimage" src={postsData.postImageURL} width={500}></img>
       {/* Render author's name: */}
       <p><span className='username'>{postsData.postAuthor.name}</span> {postsData.postText}</p>
-      <Link className='' to='/single-post' style={{ textDecoration: 'none' }}>
+      {/* <Link className='' to={`/posts/${postsData._id}`} style={{ textDecoration: 'none' }}>
         <p className='light-text'>View and leave comments</p>
-      </Link>
+      </Link> */}
     </div>
   )
 }
