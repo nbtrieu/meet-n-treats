@@ -27,6 +27,7 @@ const typeDefs = gql`
     _id: ID
     postAuthor: User
     postText: String
+    postImageURL: String
     createdAt: String
     comments: [Comment]
   }
@@ -46,11 +47,13 @@ const typeDefs = gql`
   type Query {
     me: User
     user(email: String!): User
+    posts: [Post]
   }
 
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addPost(postText: String!, postAuthor: ID!, postImageURL: String!): Post
   }
 `;
 

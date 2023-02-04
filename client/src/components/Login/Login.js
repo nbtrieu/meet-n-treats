@@ -64,8 +64,8 @@ function Login() {
               <button id="loginBtn" className="login" type="submit">Login</button>
             </form>
             <h3>
-              Don't have an account?
-              <Link className="text-dark" to="/register">Sign up</Link>
+              Don't have an account? 
+              <Link className="text-dark" to="/register" style={{ textDecoration: 'none' }}> Sign up</Link>
             </h3>
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
