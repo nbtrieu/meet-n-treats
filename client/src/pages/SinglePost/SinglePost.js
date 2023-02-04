@@ -6,37 +6,25 @@ import { QUERY_POSTS } from "../../utils/queries";
 
 import PostCard from "../../components/PostCard/PostCard";
 
-function Home() {
+export default function SinglePost() {
+  // Fetch posts data:
   const { loadingPosts, data: postsData } = useQuery(QUERY_POSTS);
   // NOTE: must be a key-value pair of data: ...
   console.log('postsData: ', postsData);
-  // console.log(postsData.posts.)
 
-  // Get posts from query:
-  const posts = postsData ? postsData.posts : [];
-  console.log('posts: ', posts);
-  if (posts.length > 0) {
-    console.log(posts[0].createdAt);
-    console.log(typeof(posts[0].createdAt)); // "Feb 3rd, 2023 at 10:51 am"
-    console.log(Date.parse(posts[0].createdAt));
-  }
-  // Sort posts by most recent:
-  // posts.sort(function(a, b) {
-  //   return new Date.parse(b.createdAt) - new Date.parse(a.createdAt);
-  // });
-
+  const posts = postsData?.posts || [];
   console.log('posts: ', posts);
 
+  // Redirect to log in page if not logged in:
   const { loading, data } = useQuery(QUERY_ME);
-  const me = data?.me || []; // *QUESTION: Why set to empty array instead of empty object? To avoid null or undefined references
-  // console.log('me: ', me);
+  const me = data?.me || []; 
 
   if (me.length === 0) {
     return (
       <Login />
     )
   }
-
+  
   return (
     <div>
       {posts && 
@@ -45,10 +33,9 @@ function Home() {
             <PostCard 
               postsData={post}
             />
+            
           </div>
       ))}
     </div>
-  );
+  )
 }
-
-export default Home;
