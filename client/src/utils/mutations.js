@@ -36,3 +36,11 @@ export const ADD_POST = gql`
     }
   }
 `;
+
+export const REMOVE_POST = gql`
+  mutation RemovePost($postId: ID!) {
+    removePost(postId: $postId) {
+      _id
+    }
+  }
+`;

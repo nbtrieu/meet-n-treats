@@ -17,8 +17,11 @@ const resolvers = {
     },
     // Query to get all posts on the homepage:
     posts: async () => {
-      return Post.find().populate('comments').populate('postAuthor');
+      return Post.find().populate('comments').populate('postAuthor').sort({ createdAt: -1 });
     },
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
+    }
   },
   Mutation: {
     register: async (parent, { name, email, password }) => {
@@ -51,7 +54,10 @@ const resolvers = {
       );
 
       return post;
-    }
+    },
+    removePost: async (parent, { postId }) => {
+      return Post.findOneAndDelete({ _id: postId });
+    },
   },
 };
 

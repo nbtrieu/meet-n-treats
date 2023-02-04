@@ -76,7 +76,7 @@ function CreatePostPage() {
 
   return (
     <div>
-      <h1>Create a Post</h1>
+      <h2>Create a Post</h2>
       <p
         className={`m-0 ${
           characterCount === 280 || error ? 'text-danger' : ''
