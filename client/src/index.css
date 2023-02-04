@@ -1,8 +1,8 @@
-/* main {
+/* /* main {
   margin: 0 auto;
   max-width: 90%;
   padding: 50px 30px;
-}
+} */
 :root {
   --primary: #FFF5FD;
   --secondary: #31343D;
@@ -17,7 +17,7 @@
   --spacing-five: calc(2.5rem);
 }
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -136,6 +136,10 @@ nav li {
   text-shadow: 3px 3px 15px rgba(255,255,255, .5);
 } */
 
+.text-danger {
+  color: var(--error);
+}
+
 /* Login  */
 .app-login_page__container{
   display: flex;
@@ -231,4 +235,13 @@ form label{
 .selected-tile {
   background-color: aquamarine !important;
   border: 2px solid #333 !important;
+}
+
+/* PostCard */
+.username {
+  font-weight: 700;
+}
+
+.light-text {
+  color: var(--dark)
 }

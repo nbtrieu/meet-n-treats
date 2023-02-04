@@ -1,9 +1,6 @@
+import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
-
-import React from "react";
-import Sidebar from "../../components/Sidebar";
-import Nav from "../../components/Nav";
 import Login from "../../components/Login";
 
 function ExplorePage() {

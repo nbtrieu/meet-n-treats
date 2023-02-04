@@ -27,6 +27,7 @@ const typeDefs = gql`
     _id: ID
     postAuthor: User
     postText: String
+    postImageURL: String
     createdAt: String
     comments: [Comment]
   }
@@ -56,12 +57,12 @@ const typeDefs = gql`
     me: User
     user(email: String!): User
     playdates: [Playdate]
+    posts: [Post]
   }
 
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPlaydate(pet1: ID!, pet2: ID!, location: String!, activity: String!, date: String!): Playdate
   }
 `;
 
