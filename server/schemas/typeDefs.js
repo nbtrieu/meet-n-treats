@@ -65,12 +65,9 @@ const typeDefs = gql`
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-<<<<<<< HEAD
     addPlaydate(pet1: String!, pet2: String!, location: String!, activity: String!, date: String!): Playdate
-=======
     addPost(postText: String!, postAuthor: ID!, postImageURL: String!): Post
     removePost(postId: ID!): Post
->>>>>>> 15143b058259de7732f30b27af24272883581756
   }
 `;
 
