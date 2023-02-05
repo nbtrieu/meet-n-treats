@@ -9,9 +9,10 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    petName: "",
+    petAge: "",
+    petType: "",
   });
-
-  // const [registerError, setRegisterError] = useState('');
 
   const [register, { error, data }] = useMutation(REGISTER_USER);
 
@@ -29,7 +30,6 @@ function Register() {
       console.log(data);
       Auth.login(data.register.token);
     } catch (error) {
-      // setRegisterError(error);
       console.error(error);
     }
   };
@@ -56,6 +56,27 @@ function Register() {
           placeholder="******"
           name="password"
           value={formState.password}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="Pet name"
+          name="petName"
+          value={formState.petName}
+          onChange={handleInputChange}
+        />
+        <input
+          type="number"
+          placeholder="Pet age"
+          name="petAge"
+          value={formState.petAge}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="Pet type"
+          name="petType"
+          value={formState.petType}
           onChange={handleInputChange}
         />
         <button type="submit">Sign up</button>

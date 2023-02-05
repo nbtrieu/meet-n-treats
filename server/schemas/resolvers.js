@@ -24,8 +24,9 @@ const resolvers = {
     }
   },
   Mutation: {
-    register: async (parent, { name, email, password }) => {
+    register: async (parent, { name, email, password, petName, petAge, petType, petBreed, petFavFood, petFavActivities, petBio }) => {
       const user = await User.create({ name, email, password });
+      const pet = await Pet.create({ petOwner: user._id, petName, petAge, petType, petBreed, petFavFood, petFavActivities, petBio});
       const token = signToken(user);
       return { token, user };
     },
