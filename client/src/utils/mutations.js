@@ -46,16 +46,14 @@ export const ADD_PLAYDATE = gql`
 `;
 // QUESTION: Do I need to put commentAuthor?
 export const ADD_POST = gql`
-  mutation AddPost($postText: String!, $postAuthor: ID!, $postImageURL: String!) {
-    addPost(postText: $postText, postAuthor: $postAuthor, postImageURL: $postImageURL) {
+   mutation AddPost($postText: String!, $postAuthor: ID!, $postImageURL: String!) {
+     addPost(postText: $postText, postAuthor: $postAuthor, postImageURL: $postImageURL) {
       _id
       postImageURL
       postText
+     }
     }
-  }
 `;
-<<<<<<< HEAD
-=======
 
 export const REMOVE_POST = gql`
   mutation RemovePost($postId: ID!) {
@@ -64,4 +62,3 @@ export const REMOVE_POST = gql`
     }
   }
 `;
->>>>>>> 15143b058259de7732f30b27af24272883581756
