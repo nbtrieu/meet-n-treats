@@ -1,0 +1,46 @@
+.modal-title{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-body button{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #0081C9;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-body button:hover{
+    background-color: #0069A8;
+}
+
+.modal-body_text{
+    text-align: center;
+    margin-top: 2rem;
+
+    
+}
+
+
+.app-nav_menu{
+    margin: 2rem 0;
+}
+
+.app-nav_menu .menu-item{
+    margin: 7rem;
+}
+
+
+.line {
+    height: 100%;
+    width: 1px;
+    background-color: #999;
+    position: absolute;
+    left: 30%;
+    top: 0;
+  }

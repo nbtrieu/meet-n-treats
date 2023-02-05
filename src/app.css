@@ -1,0 +1,36 @@
+/* .app-line {
+    height: 100%;
+    width: 1px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top: 0;
+  } */
+
+  .container{
+    padding: 2rem 8rem;
+    
+  }
+
+
+.app-title-side{
+    display: flex;
+    gap: 10rem;
+    
+    
+}
+
+/* MODAL */
+/* Background effect. It covers the entire site */
+.modal {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+    z-index: 1; /* Overlay effect: positioned over other containers */
+    width: 100%; /* Full width */
+    height: 50vh; /* Full height */
+    position: fixed; /* Fix position on the top-left corner*/
+    top: 0;
+    left: 0;
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 80px; /* Location of the content container */
+}
