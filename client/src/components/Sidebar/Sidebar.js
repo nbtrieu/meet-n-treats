@@ -8,9 +8,10 @@ function Sidebar(props) {
 
   return (
     <aside className="flex-column space-between py-1">
-      <h1>Meet & Treats</h1>
+      <h1 className='app-title'>MEET & TREATS 🐾</h1>
       {props.children}
-      <button className="btn btn-lg btn-light m-2" onClick={logout}>
+      <br></br>
+      <button className="btn btn-lg btn-light m-2 logout-btn" onClick={logout}>
         Log out
       </button>
     </aside>

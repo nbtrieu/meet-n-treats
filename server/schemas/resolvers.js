@@ -17,10 +17,15 @@ const resolvers = {
     },
     // Query to get all posts on the homepage:
     posts: async () => {
-      return Post.find().populate('comments').populate('postAuthor');
+      return Post.find().populate('comments').populate('postAuthor').sort({ createdAt: -1 });
     },
+<<<<<<< HEAD
     playdates: async (parent, args) => {
       return Playdate.find({}).populate('pet1').populate('pet2');
+=======
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
+>>>>>>> 15143b058259de7732f30b27af24272883581756
     }
   },
   Mutation: {
@@ -69,7 +74,10 @@ const resolvers = {
       );
 
       return post;
-    }
+    },
+    removePost: async (parent, { postId }) => {
+      return Post.findOneAndDelete({ _id: postId });
+    },
   },
 };
 

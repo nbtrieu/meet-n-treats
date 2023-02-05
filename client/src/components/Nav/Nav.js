@@ -5,58 +5,58 @@ function Nav() {
     <nav>
       <ul className="flex-column">
         <li>
-          <Link className="text-dark" to="/">
+          <Link className="text-dark no-underline" to="/">
             <h2 className="my-2">
-              Home
+            🏠 Home
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/search">
+          <Link className="text-dark no-underline" to="/search">
             <h2 className="my-2">
-              Search
+            🔎 Search
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/explore">
+          <Link className="text-dark no-underline" to="/explore">
             <h2 className="my-2">
-              Explore
+            🧭 Explore
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/playdates">
+          <Link className="text-dark no-underline" to="/playdates">
             <h2 className="my-2">
-              Play Dates
+            💞 Play Dates
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/create">
+          <Link className="text-dark no-underline" to="/create">
             <h2 className="my-2">
-              Create
+            📝 Create
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/profiles">
+          <Link className="text-dark no-underline" to="/profiles">
             <h2 className="my-2">
-              Profiles
+            👤 Profiles
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/marketplace">
+          <Link className="text-dark no-underline" to="/marketplace">
             <h2 className="my-2">
-              Marketplace
+            🛒 Marketplace
             </h2>
           </Link>
         </li>
         <li>
-          <Link className="text-dark" to="/adoptions">
+          <Link className="text-dark no-underline" to="/adoptions">
             <h2 className="my-2">
-              Adoptions
+            🪺 Adoptions
             </h2>
           </Link>
         </li>
