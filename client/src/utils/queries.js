@@ -33,6 +33,8 @@ export const QUERY_USER = gql`
   }
 `;
 
+
+
 export const QUERY_POSTS = gql`
   query Posts {
     posts {
@@ -57,6 +59,47 @@ export const QUERY_POSTS = gql`
     }
   }
 `;
+
+export const QUERY_PLAYDATES = gql`
+  query Playdates {
+    playdates {
+      _id
+      pet1 {
+        _id
+        petOwner {
+          name
+          _id
+          email
+        }
+        petName
+        petAge
+        petType
+        petBreed
+        petFavFood
+        petFavActivities
+        petBio
+      }
+      pet2 {
+        _id
+        petOwner {
+          _id
+          name
+          email
+        }
+        petName
+        petAge
+        petType
+        petBreed
+        petFavFood
+        petFavActivities
+        petBio
+      }
+      location
+      activity
+      date
+    }
+  }
+`
 
 export const QUERY_SINGLE_POST = gql`
   query Post($postId: ID!) {

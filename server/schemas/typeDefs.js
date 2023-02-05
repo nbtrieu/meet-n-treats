@@ -33,6 +33,15 @@ const typeDefs = gql`
     comments: [Comment]
   }
 
+  type Playdate {
+    _id: ID
+    pet1: Pet
+    pet2: Pet
+    location: String!
+    activity: String!
+    date: String!
+  }
+
   type Comment {
     _id: ID
     commentAuthor: User
@@ -50,12 +59,14 @@ const typeDefs = gql`
     user(email: String!): User
     posts: [Post]
     post(postId: ID!): Post
+    playdates: [Playdate]
   }
 
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addPet(petOwner: ID!, petName: String!, petAge: String, petType: String!, petBreed: String, petFavFood: String, petFavActivities: String, petBio: String): Pet
+    addPlaydate(pet1: String!, pet2: String!, location: String!, activity: String!, date: String!): Playdate
     addPost(postText: String!, postAuthor: ID!, postImageURL: String!): Post
     removePost(postId: ID!): Post
   }

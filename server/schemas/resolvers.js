@@ -21,6 +21,9 @@ const resolvers = {
     },
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
+    },
+    playdates: async (parent,args) => {
+      return Playdate.find({}).populate('pet1').populate('pet2');
     }
   },
   Mutation: {
@@ -70,6 +73,20 @@ const resolvers = {
     removePost: async (parent, { postId }) => {
       return Post.findOneAndDelete({ _id: postId });
     },
+    addPlaydate: async (parent, { pet1, pet2, location, activity, date }) => {
+      const playdate = await Playdate.create({pet1, pet2, location, activity, date});
+
+      await Pet.findOneAndUpdate(
+        { _id: pet1 },
+        { $push: { playdates: playdate._id}}
+      );
+
+      await Pet.findByIdAndUpdate(
+        { _id: pet2 },
+        { $push: {playdates: playdate._id}}
+      );
+      
+    }
   },
 };
 

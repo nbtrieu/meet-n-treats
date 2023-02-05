@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
+import { useMutation } from "@apollo/client";
 
 import Login from "../../components/Login";
 import MyCalendar from "../../components/Calendar";
+import { ADD_PLAYDATE } from "../../utils/mutations";
 
 function PlayDatePage() {
     const [pet1, setPet1] = useState("");
@@ -18,18 +20,29 @@ function PlayDatePage() {
     const me = data?.me || []; 
     console.log('me: ', me);
 
+    const [createPlayDate, {data: playDateData, error}] = useMutation(ADD_PLAYDATE);
+
     if (me.length === 0) {
         return (
         <Login />
     )
   }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        //TODO: add logic or API cal to schedule play date
-        console.log(`Scheduled play date between ${pet1} and ${pet2} at ${location} for ${activity}`);
-        // setPlayDates([...playDates, newPlayDate]);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const pet1 = playDateData?.me?.pet;
+    const variables = {
+        pet1: pet1,
+        pet2: pet2,
+        location: location,
+        activity: activity,
+        date: selectedDate
     };
+    createPlayDate({variables});
+    console.log(`Scheduled play date between ${pet1} and ${pet2} at ${location} for ${activity}`);
+    // setPlayDates([...playDates, newPlayDate]);
+    if (!pet1) return;
+};
 
     return (
         <div>
