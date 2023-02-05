@@ -12,6 +12,13 @@ function Nav() {
           </Link>
         </li>
         <li>
+          <Link className="text-dark no-underline" to="/add-pet">
+            <h2 className="my-2">
+            🐾 Add Pet
+            </h2>
+          </Link>
+        </li>
+        <li>
           <Link className="text-dark no-underline" to="/search">
             <h2 className="my-2">
             🔎 Search

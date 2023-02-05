@@ -8,6 +8,7 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
+import AddPetForm from "./pages/AddPetForm/AddPetForm";
 import Create from "./pages/Create";
 import PlayDate from "./pages/PlayDate";
 import Profile from "./pages/Profile";
@@ -51,6 +52,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/add-pet" element={<AddPetForm />} />
             <Route path="/create" element={<Create />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/playdates" element={<PlayDate />} />

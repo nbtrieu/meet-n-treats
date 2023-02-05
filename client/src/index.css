@@ -139,8 +139,60 @@ p {
   line-height: 2rem;
 }
 
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-primary {
+  color: #2d3e50 !important;
+}
+
+.text-info {
+  color: #1bbc9b !important;
+}
+
 .text-danger {
   color: var(--error);
+}
+
+.text-default {
+  color: #aeaeae !important;
+}
+
+.text-light {
+  color: #d9e9e8 !important;
+}
+
+.text-dark {
+  color: #1a1a1a !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-black {
+  color: #000000 !important;
+}
+
+.text-link {
+  color: #77F9EF !important;
 }
 
 .app-title {
@@ -164,7 +216,7 @@ button {
   width: 5rem;
 }
 
-/* Login  */
+/* LOG IN  */
 .app-login_page__container{
   display: flex;
   text-align: center;
@@ -326,6 +378,184 @@ box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   font-size: 2rem;
   margin: .8rem;
 
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container.container-fluid {
+  width: 92%;
+}
+
+/* FORM STYLING */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Noto Sans', sans-serif;
+  /* 1 */
+  font-size: 80%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+textarea {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 9px;
+  border: 2px solid #000000;
+  outline: none;
+  min-width: 12rem;
+}
+
+.signup-form-card {
+  width: 40%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 30px 50px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.pet-form-card {
+  width: 40%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+/* BUTTON STYLING */
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #1a1a1a;
+  background-color: #aeaeae;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #cecece;
+}
+
+.btn.btn-squared {
+  border-radius: 0;
+}
+
+.btn.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+}
+
+.btn.btn-lg {
+  font-size: 1.25rem;
+  padding: 0.8rem 1.4rem;
+}
+
+.btn.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  background-color: #2d3e50;
+  color: #d9e9e8;
+}
+
+.btn.btn-primary:hover {
+  background-color: #57779a;
+}
+
+.btn.btn-danger {
+  background-color: #e64c66;
+  color: #ffffff;
+}
+
+.btn.btn-danger:hover {
+  background-color: #ee8294;
+}
+
+.btn.btn-info {
+  background-color: #1bbc9b;
+  color: #ffffff;
+  margin-left: 18px;
+  width: 92%;
+}
+
+.btn.btn-info:hover {
+  background-color: #31e1bd;
+}
+
+.btn.btn-light {
+  background-color: #d9e9e8;
+  color: #1a1a1a;
+}
+
+.btn.btn-light:hover {
+  background-color: #84b8b4;
+}
+
+.btn.btn-dark {
+  background-color: #1a1a1a;
+  color: #d9e9e8;
+}
+
+.btn.btn-dark:hover {
+  background-color: #5f5f5f;
+}
+
+.btn.btn-white {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.btn.btn-white:hover {
+  background-color: #cccccc;
+}
+
+.btn.btn-black {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn.btn-black:hover {
+  background-color: #666666;
+}
+
+.btn.btn-link {
+  background-color: #1b89bc;
+  color: #ffffff;
+}
+
+.btn.btn-link:hover {
+  background-color: #31a9e1;
 }
 
 /* HEIGHT / WIDTH UTILS */

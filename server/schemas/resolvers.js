@@ -24,10 +24,22 @@ const resolvers = {
     }
   },
   Mutation: {
-    register: async (parent, { name, email, password }) => {
+    register: async (parent, { name, email, password}) => {
       const user = await User.create({ name, email, password });
       const token = signToken(user);
       return { token, user };
+    },
+    addPet: async (parent, { petOwner, petName, petAge, 
+      petType, petBreed, petFavFood, petFavActivities, petBio }) => {
+      const pet = await Pet.create({ petOwner, petName, petAge, 
+        petType, petBreed, petFavFood, petFavActivities, petBio });
+      
+      await User.findOneAndUpdate(
+        { name: petOwner },
+        { $addToSet: { pet: pet._id } }
+      );
+
+      return pet;
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

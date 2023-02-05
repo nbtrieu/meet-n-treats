@@ -42,7 +42,7 @@ function Login() {
               width: "98vw",
               opacity: "0.9",
             }}> 
-              <h1>Sign In</h1>
+              <h1>Log In</h1>
               <form onSubmit={handleFormSubmit}>
                 <input
                   type="email"
@@ -62,7 +62,7 @@ function Login() {
               </form>
               <h4>
                 Don't have an account? 
-                <Link className="text-dark no-underline" to="/register" style={{ textDecoration: 'none' }}> Sign up</Link>
+                <Link className="text-link no-underline" to="/register"> Sign up</Link>
               </h4>
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
