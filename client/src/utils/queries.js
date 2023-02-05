@@ -97,8 +97,6 @@ export const QUERY_POSTS = gql`
     }
   }
 `;
-<<<<<<< HEAD
-=======
 
 export const QUERY_SINGLE_POST = gql`
   query Post($postId: ID!) {
@@ -124,4 +122,3 @@ export const QUERY_SINGLE_POST = gql`
     }
   }
 `;
->>>>>>> 15143b058259de7732f30b27af24272883581756

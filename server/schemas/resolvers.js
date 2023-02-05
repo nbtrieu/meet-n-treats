@@ -19,13 +19,8 @@ const resolvers = {
     posts: async () => {
       return Post.find().populate('comments').populate('postAuthor').sort({ createdAt: -1 });
     },
-<<<<<<< HEAD
     playdates: async (parent, args) => {
       return Playdate.find({}).populate('pet1').populate('pet2');
-=======
-    post: async (parent, { postId }) => {
-      return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
->>>>>>> 15143b058259de7732f30b27af24272883581756
     }
   },
   Mutation: {
