@@ -26,7 +26,24 @@ export const LOGIN_USER = gql`
   }
 `;
 
-// QUESTION: Do I need to put commentAuthor?
+export const ADD_PET = gql`
+  mutation AddPet($petOwner: ID!, $petName: String!, $petType: String!, $petAge: String, $petBreed: String, $petFavFood: String, $petFavActivities: String, $petBio: String) {
+    addPet(petOwner: $petOwner, petName: $petName, petType: $petType, petAge: $petAge, petBreed: $petBreed, petFavFood: $petFavFood, petFavActivities: $petFavActivities, petBio: $petBio) {
+      _id
+      petOwner {
+        _id
+      }
+      petName
+      petAge
+      petType
+      petBreed
+      petFavFood
+      petFavActivities
+      petBio
+    }
+  }
+`;
+
 export const ADD_POST = gql`
   mutation AddPost($postText: String!, $postAuthor: ID!, $postImageURL: String!) {
     addPost(postText: $postText, postAuthor: $postAuthor, postImageURL: $postImageURL) {
