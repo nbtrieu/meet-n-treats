@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-import { QUERY_ME } from "../../utils/queries";
+import { QUERY_ME, QUERY_POSTS_BY_USER } from "../../utils/queries";
 import Login from "../../components/Login";
 
-function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
+import { Link } from "react-router-dom";
+
+import PostCard from "../../components/PostCard/PostCard";
+
+function ProfilePage({ currentUser, currentUserPet, updatePetName }) {
   const [petName, setPetName] = useState(currentUserPet);
 
   const { loading, data } = useQuery(QUERY_ME);
   const me = data?.me || []; 
-  console.log('me: ', me);
+
+  const {loading: postsLoading, error, data: postsData} = useQuery(QUERY_POSTS_BY_USER,
+    {
+      variables: {
+        userID: me._id
+      }
+    }
+  );
 
   if (me.length === 0) {
     return (
@@ -21,6 +32,8 @@ function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
     updatePetName(petName);
     console.log(`Pet name updated to: ${petName}`);
   };
+
+  const posts = postsData?.posts_by_user;
 
   return (
     <div className="page">
@@ -38,6 +51,21 @@ function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
         <button type="submit">Update</button>
       </form>
       <h2>Posts</h2>
+      <div>
+        {posts && 
+          posts.map((post) => (
+            <div key={post._id}>
+              <PostCard 
+                postsData={post}
+              />
+              <Link
+                to={`/posts/${post._id}`}
+                style={{ textDecoration: 'none' }}>
+                <p className='light-text'>View and leave comments</p>
+              </Link>
+            </div>
+        ))}
+      </div>
       {/* {posts.map((post) => (
         <div key={post.id}>
           <p>{post.content}</p>

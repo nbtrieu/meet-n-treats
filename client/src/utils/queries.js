@@ -10,7 +10,6 @@ export const QUERY_ME = gql`
   }
 `;
 
-
 export const QUERY_USER = gql`
   query user {
     user {
@@ -29,6 +28,20 @@ export const QUERY_USER = gql`
 `;
 
 
+export const QUERY_POSTS_BY_USER = gql`
+  query posts_by_user($userID: ID) {
+    posts_by_user(userID: $userID) {
+      _id
+      postAuthor {
+        name
+        _id
+      }
+      postText
+      createdAt
+      postImageURL
+    }
+  }
+`;
 
 export const QUERY_POSTS = gql`
   query Posts {
@@ -113,6 +126,34 @@ export const QUERY_SINGLE_POST = gql`
         }
         commentText
         createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_ITEMS_TO_SELL = gql`
+  query items_to_sell($ownerID: ID!) {
+    items_to_sell(ownerID: $ownerID) {
+      _id
+      itemTitle
+      itemPhoto
+      itemDescription
+      itemPrice
+      itemStatus
+    }
+  }
+`;
+
+export const QUERY_ITEMS_TO_BUY = gql`
+  query items_to_buy($ownerID: ID!) {
+    items_to_buy(ownerID: $ownerID) {
+      _id
+      itemTitle
+      itemPhoto
+      itemDescription
+      itemPrice
+      itemOwner {
+        name
       }
     }
   }
