@@ -49,6 +49,7 @@ a:hover {
   transition: all .2s ease-in-out;
 }
 
+
 aside {
   background: var(--primary);
 }
@@ -68,12 +69,33 @@ aside h1 {
   position: relative;
   z-index: 2;
 }
+*/
+
+nav, aside {
+  background-color: #1bbc9b;
+  align-items: center;
+}
+
+.page {
+  align-self: center;
+  margin: auto;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  background-color: #1b89bc;
+  /* align-items: center; */
+  /* justify-content: center;
+   */
+}
 
 nav {
   position: relative;
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  margin: 30px 20px;
+  /* margin: 30px 20px; */
+  
 }
 
 nav a:hover {
@@ -81,16 +103,22 @@ nav a:hover {
 }
 
 nav li {
-  cursor: pointer;
+  /* cursor: pointer; */
   text-shadow: 2px 2px 10px rgba(0,0,0, 0.5);
-  margin: 0 50px;
+  /* margin: 0 50px; */
+}
+
+nav li:hover {
+  transform: translateX(10px) scale(1.05);
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
 }
 
 .navActive {
   color: var(--secondary);
   cursor: default;
   text-shadow: 3px 3px 15px rgba(255,255,255, .5);
-} */
+} 
 
 h1,
 h2,
@@ -214,6 +242,7 @@ button {
 
 .logout-btn {
   width: 5rem;
+  margin: auto;
 }
 
 /* LOG IN  */

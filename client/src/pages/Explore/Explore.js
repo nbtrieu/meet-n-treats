@@ -15,7 +15,7 @@ function ExplorePage() {
     }
 
     return(
-        <div>
+        <div className="page">
             
             <h1>Explore</h1>
             <p>Discover new pets and stay updated on your favorites</p>

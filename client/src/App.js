@@ -44,10 +44,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
-          <Sidebar>
-            <Nav></Nav>
-          </Sidebar>
+        <div className="main">
+          <navi>
+            <Sidebar>
+              <Nav></Nav>
+            </Sidebar>
+          </navi>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

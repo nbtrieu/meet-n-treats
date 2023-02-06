@@ -47,7 +47,7 @@ export default function SinglePost() {
   // }
   
   return (
-    <div>
+    <div className="page">
       SINGLE POST
       {/* <h4>{post.postAuthor.name}</h4> */}
       {/* <p>{post.createdAt}</p> */}

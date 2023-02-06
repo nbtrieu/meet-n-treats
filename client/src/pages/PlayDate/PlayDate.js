@@ -45,7 +45,7 @@ function PlayDatePage() {
 };
 
     return (
-        <div>
+        <div className="page">
             <h1>Schedule a Play Date</h1>
             <form onSubmit={handleSubmit}>
                 <h2>Pet 2</h2>

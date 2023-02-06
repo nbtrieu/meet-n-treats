@@ -75,7 +75,7 @@ function CreatePostPage() {
   }
 
   return (
-    <div>
+    <div className="page">
       <h2>📝 Create a Post</h2>
       <p
         className={`m-0 ${

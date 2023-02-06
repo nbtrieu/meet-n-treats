@@ -30,7 +30,7 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className="page">
       {posts && 
         posts.map((post) => (
           <div key={post._id} className='app-postcard_page my-5 px-6 py-5'>

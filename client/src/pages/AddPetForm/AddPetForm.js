@@ -55,7 +55,7 @@ export default function AddPetForm() {
   }
 
   return (
-    <div className="pet-form-card flex-column align-center">
+    <div className="pet-form-card flex-column align-center page">
       <h2 className="text-center">🐾 Add Your Pet 🐾</h2>
       <form onSubmit={handleFormSubmit}>
         <input

@@ -23,7 +23,7 @@ function ProfilePage({ currentUser, currentUserPet, posts, updatePetName }) {
   };
 
   return (
-    <div>
+    <div className="page">
       {/* <h1>{currentUser}'s Profile</h1> */}
       {/* <h2>Pet: {currentUserPet}</h2> */}
       <form onSubmit={handleUpdatePetName}>
