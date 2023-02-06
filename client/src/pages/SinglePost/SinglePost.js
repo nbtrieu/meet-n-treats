@@ -38,7 +38,7 @@ export default function SinglePost(props) {
   
   return (
     <div className="flex-column align-center mx-auto py-5">
-      <div className='app-postcard_page_single flex-row mt-5 mb-6 px-3 pt-5'>
+      <div className='app-postcard_page_single flex-row mt-5 mb-6 pl-3 pt-5'>
         <PostCard postsData={post} />
         <div className="mx-5 flex-column mt-6 mb-5">
           <h2>💭 Join the Discussion 💭</h2>

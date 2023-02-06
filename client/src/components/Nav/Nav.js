@@ -14,7 +14,7 @@ function Nav() {
         <li>
           <Link className="text-dark no-underline" to="/add-pet">
             <h2 className="my-2">
-            🐾 Add Pet
+            ➕ Add Pet
             </h2>
           </Link>
         </li>
