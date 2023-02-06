@@ -35,13 +35,19 @@ export const QUERY_POSTS = gql`
     posts {
       _id
       postAuthor {
-        name
         _id
+        name
       }
       postText
+      postImageURL
       createdAt
       timestamp
-      postImageURL
+      comments {
+        _id
+        commentAuthor
+        commentText
+        createdAt
+      }
     }
   }
 `;

@@ -25,6 +25,10 @@ const resolvers = {
     playdates: async (parent,args) => {
       return Playdate.find({}).populate('pet1').populate('pet2');
     }
+    // Query to get all comments on the single post page:
+    // comments: async () => {
+    //   return Post.find().populate('comments');
+    // }
   },
   Mutation: {
     register: async (parent, { name, email, password}) => {
@@ -97,6 +101,13 @@ const resolvers = {
           new: true,
           runValidators: true,
         }
+      );
+    },
+    removeComment: async (parent, { postId, commentId }) => {
+      return Post.findOneAndUpdate(
+        { _id: postId },
+        { $pull: { comments: { _id: commentId } } },
+        { new: true }
       );
     },
   },

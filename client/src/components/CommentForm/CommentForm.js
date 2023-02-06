@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { ADD_COMMENT } from "../../utils/mutations";
+import { QUERY_POSTS } from "../../utils/queries";
 
 import { QUERY_ME } from "../../utils/queries";
 import Login from "../../components/Login";
@@ -13,11 +14,25 @@ export default function CommentForm(props) {
 
   const [formState, setFormState] = useState({
     postId: postId,
-    commentAuthor: Auth.getUser().data._id,
+    commentAuthor: Auth.getUser().data.name,
     commentText: "",
   });
 
-  const [addComment, { error, data }] = useMutation(ADD_COMMENT);
+  const [addComment, { error, data }] = useMutation(ADD_COMMENT, {
+    // Get comments from postsData stored in the browser cache
+    update(cache, { data: { addComment } }) {
+      try {
+        const { posts } = cache.readQuery({ query: QUERY_POSTS });
+        console.log('>>> logging posts with comments: ', posts);
+        cache.writeQuery({
+          query: QUERY_POSTS,
+          data: { posts: [addComment, ...posts] },
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  });
 
   // Authenticate user:
   const { loading, data: meData } = useQuery(QUERY_ME);
@@ -43,6 +58,7 @@ export default function CommentForm(props) {
       });
       console.log(data);
       setFormState('');
+      // window.location.replace(`/posts/${postId}`);
 
     } catch (error) {
       console.error('>>> handleSubmit error: ', error);
@@ -60,7 +76,7 @@ export default function CommentForm(props) {
             value={formState.commentText}
             onChange={handleInputChange}
             style={{ border: 'none' }}
-            className="negative-margin no-border text-lg"
+            className="negative-left-margin no-border text-lg light-background"
           />
         </div>
         <div className="display-inline">

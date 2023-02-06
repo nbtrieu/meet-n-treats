@@ -43,11 +43,14 @@ export default function SinglePost(props) {
       <h2>💭 Join the Discussion 💭</h2>
       <div className='app-postcard_page my-5 px-6 py-5'>
         <PostCard postsData={post} />
+        <hr></hr>
+        <div className="">
+          <CommentList comments={post.comments} />
+        </div>
         <div className="">
           <CommentForm postId={postId} />
         </div>
       </div>
-      {/* TODO: Add CommentList & CommentForm */}
     </div>
   )
 }

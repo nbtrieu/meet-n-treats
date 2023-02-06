@@ -18,9 +18,8 @@ import Nav from "../Nav";
 
 export default function MainApp() {
   const { loadingPosts, data: postsData } = useQuery(QUERY_POSTS);
-  // NOTE: must be a key-value pair of data: ...
+  // const { loadingComments, data: commentsData } = useQuery()
   console.log('>>> logging postsData: ', postsData);
-  // console.log(postsData.posts.)
 
   // Get posts from query:
   var posts = postsData ? postsData.posts : [];
