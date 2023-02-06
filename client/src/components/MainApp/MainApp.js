@@ -10,6 +10,9 @@ import Profile from "../../pages/Profile";
 import Search from "../../pages/Search";
 import Explore from "../../pages/Explore";
 import SinglePost from "../../pages/SinglePost/SinglePost";
+import Market from "../../pages/Market";
+import MarketSell from "../../pages/MarketSell";
+import MarketBuy from "../../pages/MarketBuy";
 
 import Login from "../Login";
 import Register from "../Register";
@@ -43,6 +46,9 @@ export default function MainApp() {
           <Route path="/playdates" element={<PlayDate />} />
           <Route path="/profiles" element={<Profile posts={posts} />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/marketplace" element={<Market />} />
+          <Route path="/marketplace/buy" element={<MarketBuy />} />
+          <Route path="/marketplace/sell" element={<MarketSell />} />
           <Route path="/posts/:postId" element={<SinglePost posts={posts} />} />
         </Routes>
       </div>

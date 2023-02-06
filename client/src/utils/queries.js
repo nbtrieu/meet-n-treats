@@ -122,3 +122,31 @@ export const QUERY_PET = gql`
     }
   }
 `;
+
+export const QUERY_ITEMS_TO_SELL = gql`
+  query items_to_sell($ownerID: ID!) {
+    items_to_sell(ownerID: $ownerID) {
+      _id
+      itemTitle
+      itemPhoto
+      itemDescription
+      itemPrice
+      itemStatus
+    }
+  }
+`;
+
+export const QUERY_ITEMS_TO_BUY = gql`
+  query items_to_buy($ownerID: ID!) {
+    items_to_buy(ownerID: $ownerID) {
+      _id
+      itemTitle
+      itemPhoto
+      itemDescription
+      itemPrice
+      itemOwner {
+        name
+      }
+    }
+  }
+`;
