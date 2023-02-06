@@ -28,7 +28,7 @@ export default function MainApp() {
   
   return (
     <Router>
-      <div>
+      <div className="main">
         <Sidebar>
           <Nav></Nav>
         </Sidebar>

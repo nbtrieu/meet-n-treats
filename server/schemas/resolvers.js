@@ -86,7 +86,7 @@ const resolvers = {
         { $push: {playdates: playdate._id}}
       );
       
-    }
+    },
     addComment: async (parent, { postId, commentText, commentAuthor }) => {
       return Post.findOneAndUpdate(
         { _id: postId },
