@@ -59,7 +59,7 @@ function ProfilePage(props) {
 
   return (
     <div className="flex-column page negative-top-margin">
-      <div className="text-primary">
+      <div className="text-primary border-bottom">
         <h1>✨ Welcome, <span className="text-pink">{me.name} ✨</span></h1>
       </div>
       {/* <div className="text-left">
