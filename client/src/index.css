@@ -1969,3 +1969,40 @@ textarea {
 }
 
 
+.market-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.market-home__greeting {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.market-home__options {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.market-home__option {
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  width: 45%;
+}
+
+.market-home__option--buy {
+  background-color: green;
+}
+
+.market-home__option--sell {
+  background-color: red;
+}
