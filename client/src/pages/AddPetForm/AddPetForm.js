@@ -27,9 +27,9 @@ export default function AddPetForm() {
     setFormState({ ...formState, [name]: value });
   };
 
+  // Authenticate user:
   const { loading, data: meData } = useQuery(QUERY_ME);
   const me = meData?.me || []; 
-  // console.log('me: ', me);
 
   if (me.length === 0) {
     return (
@@ -44,14 +44,13 @@ export default function AddPetForm() {
         variables: { ...formState }
       });
       console.log(data);
-      console.log('>>> petOwner value: ', Auth.getUser().data._id)
       setFormState('');
       window.location.replace('/profiles');
 
     } catch (error) {
       console.error('>>> handleSubmit error: ', error);
     }
-  }
+  };
 
   return (
     <div className="pet-form-card flex-column align-center">
@@ -67,6 +66,7 @@ export default function AddPetForm() {
         <label>
           <h6>Select type of animal for your pet*:</h6>
           <select name="petType" value={formState.petType} onChange={handleInputChange}>
+            <option value="default">Select</option>
             <option value="dog">🐶 Doggo</option>
             <option value="cat">🐱 Catto</option>
             <option value="rabbit">🐰 Bunny</option>

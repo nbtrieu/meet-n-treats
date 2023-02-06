@@ -23,11 +23,6 @@ export const QUERY_USER = gql`
         postText
         createdAt
         timestamp
-        comments {
-          commentAuthor
-          commentText
-          createdAt
-        }
       }
     }
   }
@@ -44,15 +39,6 @@ export const QUERY_POSTS = gql`
       postText
       createdAt
       timestamp
-      comments {
-        _id
-        commentAuthor {
-          _id
-          name
-        }
-        commentText
-        createdAt
-      }
       postImageURL
     }
   }
