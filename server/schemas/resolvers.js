@@ -6,13 +6,13 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate('pet');
       }
       throw new AuthenticationError("You need to be logged in!");
     },
     // Query to get user info on profile page:
-    user: async (parent, { _id }) => {
-      return User.findOne({ _id }).populate('pet').populate('posts');
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId }).populate('pet').populate('posts');
     // TODO: would be cool to search by username instead of email, but username doesn't have to be unique... have to figure out how to require unique username
     },
     // Query to get all posts on the homepage:
@@ -22,11 +22,11 @@ const resolvers = {
     // IGNORE BELOW. Don't need to query single post anymore
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
-    }
-    // Query to get all comments on the single post page:
-    // comments: async () => {
-    //   return Post.find().populate('comments');
-    // }
+    },
+    // Query pet info for profile page:
+    pet: async (parent, { petId }) => {
+      return Pet.findOne({ _id: petId });
+    },
   },
   Mutation: {
     register: async (parent, { name, email, password}) => {
@@ -42,6 +42,7 @@ const resolvers = {
       await User.findOneAndUpdate(
         { _id: petOwner },
         { $addToSet: { pet: pet._id } }
+        // { $addToSet: { pet: pet._id } }
       );
 
       return pet;

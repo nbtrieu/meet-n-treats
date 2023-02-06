@@ -34,14 +34,14 @@ export default function MainApp() {
           </Sidebar>
         </navi>
         <Routes>
-          <Route path="/" element={<Home posts={posts}/>} />
+          <Route path="/" element={<Home posts={posts} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/add-pet" element={<AddPetForm />} />
           <Route path="/create" element={<Create />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/playdates" element={<PlayDate />} />
-          <Route path="/profiles" element={<Profile />} />
+          <Route path="/profiles" element={<Profile posts={posts} />} />
           <Route path="/search" element={<Search />} />
           <Route path="/posts/:postId" element={<SinglePost posts={posts} />} />
         </Routes>

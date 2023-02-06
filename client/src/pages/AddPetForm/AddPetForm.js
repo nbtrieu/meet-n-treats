@@ -45,7 +45,7 @@ export default function AddPetForm() {
       });
       console.log(data);
       setFormState('');
-      window.location.replace('/profiles');
+      window.location.replace('/');
 
     } catch (error) {
       console.error('>>> handleSubmit error: ', error);
@@ -67,14 +67,14 @@ export default function AddPetForm() {
           <h6>Select type of animal for your pet*:</h6>
           <select name="petType" value={formState.petType} onChange={handleInputChange}>
             <option value="default">Select</option>
-            <option value="dog">🐶 Doggo</option>
-            <option value="cat">🐱 Catto</option>
-            <option value="rabbit">🐰 Bunny</option>
-            <option value="hamster">🐹 Hamster/Guinea Pig/Mouse/Chinchilla</option>
-            <option value="bird">🐦 Birdy</option>
-            <option value="reptile">🐢 Reptile Fam</option>
-            <option value="aquatic">🐠 Aquatics</option>
-            <option value="other">Other</option>
+            <option value="🐶 Doggo">🐶 Doggo</option>
+            <option value="🐱 Catto">🐱 Catto</option>
+            <option value="🐰 Bunny">🐰 Bunny</option>
+            <option value="🐹 Hamster/Guinea Pig/Mouse/Chinchilla">🐹 Hamster/Guinea Pig/Mouse/Chinchilla</option>
+            <option value="🐦 Birdy">🐦 Birdy</option>
+            <option value="🐢 Reptile Fam">🐢 Reptile Fam</option>
+            <option value="🐠 Aquatics">🐠 Aquatics</option>
+            <option value="Other">Other</option>
           </select>
         </label>
         <input

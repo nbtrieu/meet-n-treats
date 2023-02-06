@@ -57,8 +57,11 @@ export default function CommentForm(props) {
         variables: { ...formState }
       });
       console.log(data);
-      setFormState('');
-      // window.location.replace(`/posts/${postId}`);
+      setFormState({
+        postId: postId,
+        commentAuthor: Auth.getUser().data.name,
+        commentText: "",
+      });
 
     } catch (error) {
       console.error('>>> handleSubmit error: ', error);
