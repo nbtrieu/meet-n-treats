@@ -72,7 +72,7 @@ aside h1 {
 */
 
 nav, aside {
-  background-color: #1bbc9b;
+  /* background-color: #1bbc9b; */
   align-items: center;
 }
 
@@ -84,7 +84,7 @@ nav, aside {
 .main{
   display: flex;
   flex-direction: row;
-  background-color: #1b89bc;
+  /* background-color: #1b89bc; */
   /* align-items: center; */
   /* justify-content: center;
    */
@@ -104,7 +104,7 @@ nav a:hover {
 
 nav li {
   /* cursor: pointer; */
-  text-shadow: 2px 2px 10px rgba(0,0,0, 0.5);
+  /* text-shadow: 2px 2px 10px rgba(0,0,0, 0.5); */
   /* margin: 0 50px; */
 }
 
