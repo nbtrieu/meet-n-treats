@@ -80,3 +80,16 @@ export const REMOVE_POST = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation AddComment($postId: ID!, $commentText: String!, $commentAuthor: String!) {
+    addComment(postId: $postId, commentText: $commentText, commentAuthor: $commentAuthor) {
+      comments {
+        _id
+        commentAuthor
+        commentText
+        createdAt
+      }
+    }
+  }
+`;

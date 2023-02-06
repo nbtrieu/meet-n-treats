@@ -167,6 +167,10 @@ p {
   line-height: 2rem;
 }
 
+.text-lg {
+  font-size: 1rem;
+}
+
 .text-uppercase {
   text-transform: uppercase !important;
 }
@@ -281,20 +285,6 @@ form label{
   margin:0 1rem;
 }
 
-#loginBtn {
-  margin: 1rem;
-  border-radius: 9px;
-  border: 2px solid #000000;
-  outline: none;
-  cursor: pointer;
-  background-color: #000000;
-  color: #FFFFFF;
-  width: 10rem;
-  height: 2.75rem;
-  justify-content: center;
-  align-items: center;
-}
-
 /* form button #loginBtn{
   margin: 1rem;
   padding: 1rem;
@@ -357,7 +347,7 @@ form label{
 }
 
 .app-postcard_page {
-  width: 60%;
+  width: 40%;
   height: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -420,6 +410,27 @@ box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   width: 92%;
 }
 
+/* DISPLAY */
+.display-none {
+  display: none !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.display-inline-block {
+  display: inline-block !important;
+}
+
+.display-inline {
+  display: inline !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
 /* FORM STYLING */
 button,
 input,
@@ -473,6 +484,14 @@ textarea {
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
+.no-border:focus {
+  outline: none !important;
+}
+
+.negative-margin {
+  margin-left: -15px;
+}
+
 /* BUTTON STYLING */
 .btn {
   text-align: center;
@@ -502,24 +521,29 @@ textarea {
   padding: 0.3rem 0.9rem;
 }
 
+.btn.btn-xsm {
+  width: 10%;
+}
+
 .btn.btn-lg {
   font-size: 1.25rem;
   padding: 0.8rem 1.4rem;
 }
 
 .btn.btn-block {
-  width: 100%;
+  width: 92%;
   display: block;
   text-align: center;
+  margin-left: 18px;
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #FFEF9E;
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #FFDBF6;
 }
 
 .btn.btn-danger {
@@ -529,6 +553,15 @@ textarea {
 
 .btn.btn-danger:hover {
   background-color: #ee8294;
+}
+
+.btn.btn-comment {
+  background-color: transparent;
+}
+
+.btn.btn-comment:hover {
+  /* filter: blue; */
+  background-color: #FFE9FA;
 }
 
 .btn.btn-info {

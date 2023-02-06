@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Comment, Post, Pet } = require("../models");
+const { User, Post, Pet } = require("../models");
 const { signToken } = require("../utils/auth.js");
 
 const resolvers = {
@@ -10,9 +10,9 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    // Query to search user by email:
-    user: async (parent, { email }) => {
-      return User.findOne({ email }).populate('pet').populate('posts').populate('comments');
+    // Query to get user info on profile page:
+    user: async (parent, { _id }) => {
+      return User.findOne({ _id }).populate('pet').populate('posts');
     // TODO: would be cool to search by username instead of email, but username doesn't have to be unique... have to figure out how to require unique username
     },
     // Query to get all posts on the homepage:
@@ -38,7 +38,7 @@ const resolvers = {
         petType, petBreed, petFavFood, petFavActivities, petBio });
       
       await User.findOneAndUpdate(
-        { name: petOwner },
+        { _id: petOwner },
         { $addToSet: { pet: pet._id } }
       );
 
@@ -64,7 +64,7 @@ const resolvers = {
       const post = await Post.create({ postAuthor, postText, postImageURL });
 
       await User.findOneAndUpdate(
-        { name: postAuthor },
+        { _id: postAuthor },
         { $addToSet: { posts: post._id } }
       );
 
@@ -87,6 +87,18 @@ const resolvers = {
       );
       
     }
+    addComment: async (parent, { postId, commentText, commentAuthor }) => {
+      return Post.findOneAndUpdate(
+        { _id: postId },
+        {
+          $addToSet: { comments: { commentText, commentAuthor } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
   },
 };
 

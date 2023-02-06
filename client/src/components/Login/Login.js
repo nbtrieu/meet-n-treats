@@ -58,7 +58,7 @@ function Login() {
                   value={formState.password}
                   onChange={handleInputChange}
                 />
-                <button id="loginBtn" className="login" type="submit">Login</button>
+                <button className="btn btn-block btn-primary text-dark login" type="submit">Login</button>
               </form>
               <h4>
                 Don't have an account? 
