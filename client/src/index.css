@@ -26,6 +26,15 @@ nav, aside {
   align-items: center;
 }
 
+aside{
+  align-items: center;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .page {
   align-self: center;
   margin: auto;
@@ -453,7 +462,7 @@ form label{
 }
 
 .app-postcard_page_single {
-  width: 90%;
+  width: 95%;
   height: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -834,6 +843,10 @@ textarea {
 
 .min-100-vh {
   min-height: 100vh;
+}
+
+.max-100-vh {
+  max-height: 100vh;
 }
 
 .min-100-vw {

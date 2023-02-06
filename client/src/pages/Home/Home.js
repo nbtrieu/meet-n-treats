@@ -21,7 +21,7 @@ function Home(props) {
   }
 
   return (
-    <div className="flex-column align-center">
+    <div className="flex-column align-center max-100-vh">
       {posts && 
         posts.map((post) => (
           <div key={post._id} className='app-postcard_page ml-7 my-5 px-6 py-5'>
