@@ -11,19 +11,33 @@ import { QUERY_SINGLE_POST } from "../../utils/queries";
 
 import PostCard from "../../components/PostCard/PostCard";
 
-export default function SinglePost() {
+export default function SinglePost(props) {
+  console.log('Starting SinglePost()...');
+
   // Retrieve postId from the route:
   const { postId } = useParams();
   
-  // Fetch single post data:
-  const { loadingPost, data: postData } = useQuery(QUERY_SINGLE_POST, {
-    variables: { postId: postId },
-  });
-  // NOTE: must be a key-value pair of data: ...
-  console.log('postData: ', postData);
+  const { posts } = props;
+  console.log('logging posts: ', posts);
 
-  const post = postData ? postData.post : [];
-  console.log('single post: ', post);
+  const post = posts.find(post => post._id === postId);
+  console.log('>>> logging post: ', post);
+
+  // // Fetch single post data:
+  // const { loadingPost, data: postData } = useQuery(QUERY_SINGLE_POST, {
+  //   variables: { postId: postId },
+  // });
+  // // NOTE: must be a key-value pair of data: ...
+  // console.log('>>>logging postData: ', postData);
+
+  // const post = postData ? postData.post : [];
+  // // const post = postData.post;
+  // console.log('>>>logging post: ', post);
+  // BUG: WHY IS LOGGING THE FOLLOWING AT THE SAME TIME BREAKING THIS PAGE???
+  // BUT LOGGING ONE BY ONE AND ADDING JSX ONE BY ONE WORKS???? 
+  // BUT THEN IT BREAKS AGAIN WHEN REFRESH??
+  // console.log('logging postAuthor: ', post.postAuthor);
+  // console.log('logging postAuthor.name: ', post.postAuthor.name);
 
   // Redirect to log in page if not logged in:
   const { loading, data } = useQuery(QUERY_ME);
@@ -35,15 +49,20 @@ export default function SinglePost() {
     )
   }
 
-  if (loadingPost) {
-    return <div>Loading...</div>;
-  }
+  // if (loadingPost) {
+  //   return <div>Loading...</div>;
+  // }
   
   return (
-    <div>
-      SINGLE POST
-      {/* <PostCard postsData={post} /> */}
-      {/* ERROR: Why is 'name' undefined??? it shows up on console when logging post though??? */}
+    <div className="flex-column align-center">
+      <h2>💭 Join the Discussion</h2>
+      <div className='app-postcard_page my-5 px-6 py-5'>
+        <PostCard 
+        postsData={post}
+      />
+      </div>
+      
+      
       {/* TODO: Add CommentList & CommentForm */}
     </div>
   )

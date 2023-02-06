@@ -8,7 +8,7 @@ function Register() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
-    password: "",
+    password: ""
   });
 
   // const [registerError, setRegisterError] = useState('');
@@ -34,19 +34,19 @@ function Register() {
     }
   };
   return (
-    <div>
-      <h1>Register Page</h1>
+    <div className="signup-form-card flex-column align-center">
+      <h2>Sign Up</h2>
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
-          placeholder="Your username"
+          placeholder="Your username*"
           name="name"
           value={formState.name}
           onChange={handleInputChange}
         />
         <input
           type="email"
-          placeholder="Your email"
+          placeholder="Your email*"
           name="email"
           value={formState.email}
           onChange={handleInputChange}
@@ -57,8 +57,8 @@ function Register() {
           name="password"
           value={formState.password}
           onChange={handleInputChange}
-        />
-        <button type="submit">Sign up</button>
+        />        
+        <button type="submit" className="btn btn-info signup-btn">Sign up</button>
       </form>
       {error && (
         <div className="text-danger">

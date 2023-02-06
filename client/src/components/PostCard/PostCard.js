@@ -5,15 +5,19 @@ export default function PostCard(props) {
   return (
     // FRONT-END TODO: Add styling to the div below to look like an Instagram post
     <div>
-      <h4>{postsData.postAuthor.name}</h4>
+      <div className='app-postcard_data-author'>
+        <div className='app-postcard_data-author-avatar'>
+          <img src={'https://res.cloudinary.com/dnwrm14k9/image/upload/v1675571532/avatar_if5map.png'} alt='avatar' />
+        </div>
+        <h4>{postsData.postAuthor.name}</h4>
+      </div>
       <p>{postsData.createdAt}</p>
       {/* Render uploaded image from Cloudinary: */}
-      <img id="uploadedimage" src={postsData.postImageURL} width={500}></img>
+      <div className='app-postcard_data-image'>
+        <img id="uploadedimage" src={postsData.postImageURL} width={500}></img>
+      </div>
       {/* Render author's name: */}
       <p><span className='username'>{postsData.postAuthor.name}</span> {postsData.postText}</p>
-      {/* <Link className='' to={`/posts/${postsData._id}`} style={{ textDecoration: 'none' }}>
-        <p className='light-text'>View and leave comments</p>
-      </Link> */}
     </div>
   )
 }

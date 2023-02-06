@@ -46,7 +46,7 @@ function CreatePostPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // logic to create and post the post
+
     try {
       console.log('postImageURL: ', postImageURL);
       const { data } = await addPost({
@@ -76,7 +76,7 @@ function CreatePostPage() {
 
   return (
     <div>
-      <h2>Create a Post</h2>
+      <h2>📝 Create a Post</h2>
       <p
         className={`m-0 ${
           characterCount === 280 || error ? 'text-danger' : ''

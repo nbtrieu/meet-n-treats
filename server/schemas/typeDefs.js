@@ -15,7 +15,7 @@ const typeDefs = gql`
     _id: ID
     petOwner: User
     petName: String
-    petAge: Int
+    petAge: String
     petType: String
     petBreed: String
     petFavFood: String
@@ -55,6 +55,7 @@ const typeDefs = gql`
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addPet(petOwner: ID!, petName: String!, petAge: String, petType: String!, petBreed: String, petFavFood: String, petFavActivities: String, petBio: String): Pet
     addPost(postText: String!, postAuthor: ID!, postImageURL: String!): Post
     removePost(postId: ID!): Post
   }
