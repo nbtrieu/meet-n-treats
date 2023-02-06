@@ -4,7 +4,7 @@ export default function PostCard(props) {
   const { postsData } = props;
   return (
     // FRONT-END TODO: Add styling to the div below to look like an Instagram post
-    <div>
+    <div className=''>
       <div className='app-postcard_data-author'>
         <div className='app-postcard_data-author-avatar'>
           <img src={'https://res.cloudinary.com/dnwrm14k9/image/upload/v1675571532/avatar_if5map.png'} alt='avatar' />

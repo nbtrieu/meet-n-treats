@@ -143,6 +143,10 @@ p {
   font-size: 1rem;
 }
 
+.text-sm {
+  font-size: 0.8rem;
+}
+
 .text-uppercase {
   text-transform: uppercase !important;
 }
@@ -346,15 +350,14 @@ form label{
 
 }
 
-/* .app-postcard_data-image img{
-width: 60%;
-height: 80%;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-border: 10px solid white;
-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-} */
+.app-postcard_data-image {
+  display: flex;
+}
+
+.app-postcard_data-image img {
+  display: flex;
+  max-width:100%;
+}
 
 .app-postcard-icons{
   display: flex;
@@ -459,8 +462,16 @@ textarea {
   outline: none !important;
 }
 
-.negative-margin {
-  margin-left: -15px;
+.negative-left-margin {
+  margin-left: -6px;
+}
+
+.negative-bottom-margin {
+  margin-bottom: -20px;
+}
+
+.light-background {
+  background-color: #F1EDE5;
 }
 
 /* BUTTON STYLING */
@@ -528,6 +539,7 @@ textarea {
 
 .btn.btn-comment {
   background-color: transparent;
+  padding: 10px;
 }
 
 .btn.btn-comment:hover {
@@ -1270,6 +1282,287 @@ textarea {
     align-content: flex-end;
   }
   .align-content-center-sm {
+    align-content: center;
+  }
+}
+
+/* col-md */
+@media screen and (min-width: 768px) {
+  .col-md-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .col-md-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-md-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-md-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-md-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-md-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-md-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-md-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-md-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .justify-space-between-md {
+    justify-content: space-between;
+  }
+  .justify-space-around-md {
+    justify-content: space-around;
+  }
+  .justify-flex-start-md {
+    justify-content: flex-start;
+  }
+  .justify-flex-end-md {
+    justify-content: flex-end;
+  }
+  .justify-center-md {
+    justify-content: center;
+  }
+  .align-start-md {
+    align-items: flex-start;
+  }
+  .align-stretch-md {
+    align-items: stretch;
+  }
+  .align-end-md {
+    align-items: flex-end;
+  }
+  .align-center-md {
+    align-items: center;
+  }
+  .align-content-start-md {
+    align-content: flex-start;
+  }
+  .align-content-stretch-md {
+    align-content: stretch;
+  }
+  .align-content-end-md {
+    align-content: flex-end;
+  }
+  .align-content-center-md {
+    align-content: center;
+  }
+}
+
+/* col-lg */
+@media screen and (min-width: 992px) {
+  .col-md-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .col-lg-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-lg-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-lg-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-lg-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-lg-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-lg-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-lg-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .justify-space-between-lg {
+    justify-content: space-between;
+  }
+  .justify-space-around-lg {
+    justify-content: space-around;
+  }
+  .justify-flex-start-lg {
+    justify-content: flex-start;
+  }
+  .justify-flex-end-lg {
+    justify-content: flex-end;
+  }
+  .justify-center-lg {
+    justify-content: center;
+  }
+  .align-start-lg {
+    align-items: flex-start;
+  }
+  .align-stretch-lg {
+    align-items: stretch;
+  }
+  .align-end-lg {
+    align-items: flex-end;
+  }
+  .align-center-lg {
+    align-items: center;
+  }
+  .align-content-start-lg {
+    align-content: flex-start;
+  }
+  .align-content-stretch-lg {
+    align-content: stretch;
+  }
+  .align-content-end-lg {
+    align-content: flex-end;
+  }
+  .align-content-center-lg {
+    align-content: center;
+  }
+}
+
+/* col-xl */
+@media screen and (min-width: 1200px) {
+  .col-xl-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  .col-xl-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-xl-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-xl-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-xl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-xl-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  .col-xl-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+  .col-xl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-xl-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  .col-xl-11 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-xl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .justify-space-between-xl {
+    justify-content: space-between;
+  }
+  .justify-space-around-xl {
+    justify-content: space-around;
+  }
+  .justify-flex-start-xl {
+    justify-content: flex-start;
+  }
+  .justify-flex-end-xl {
+    justify-content: flex-end;
+  }
+  .justify-center-xl {
+    justify-content: center;
+  }
+  .align-start-xl {
+    align-items: flex-start;
+  }
+  .align-stretch-xl {
+    align-items: stretch;
+  }
+  .align-end-xl {
+    align-items: flex-end;
+  }
+  .align-center-xl {
+    align-items: center;
+  }
+  .align-content-start-xl {
+    align-content: flex-start;
+  }
+  .align-content-stretch-xl {
+    align-content: stretch;
+  }
+  .align-content-end-xl {
+    align-content: flex-end;
+  }
+  .align-content-center-xl {
     align-content: center;
   }
 }
