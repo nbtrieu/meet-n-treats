@@ -40,15 +40,67 @@ function MarketBuy() {
   };
   if (items == null || items.length === 0) {
     return (
-      <div className="username page">
-        There's nothing to buy! would you like to{" "}
-        <Link to={`/marketplace/sell`} style={{ textDecoration: "none" }}>
-          <p className="light-text">Sell</p>
-        </Link>{" "}
-        something?
+      <div className="market-container page">
+        {/* <h3 className="empty-message">There's nothing to buy!</h3>
+        <p className="empty-message">
+          Would you like to{" "}
+          <Link to={`/marketplace/sell`} className="sell-link">
+            sell
+          </Link>{" "}
+          something?
+        </p> */}
+        <h3 className="empty-message">Check out these pet accessories!</h3>
+        <div className="pet-accessories">
+          <div className="pet-accessory">
+            <h4 className="pet-accessory-title">Pet Carrier</h4>
+            <button className="pet-accessory-purchase-button">
+              Purchase
+            </button>
+            <p className="pet-accessory-price">$50.00</p>
+            <img
+              src="https://m.media-amazon.com/images/I/81eLpE6l3NL.jpg"
+              width={500}
+              alt="Pet Carrier"
+            />
+            <p className="pet-accessory-description">
+              Perfect for small dogs and cats.
+            </p>
+          </div>
+          <div className="pet-accessory">
+            <h4 className="pet-accessory-title">Pet Bed</h4>
+            <button className="pet-accessory-purchase-button">
+              Purchase
+            </button>
+            <p className="pet-accessory-price">$100.00</p>
+            <img
+              src="https://m.media-amazon.com/images/I/61gxx3o19RL.jpg"
+              width={500}
+              alt="Pet Bed"
+            />
+            <p className="pet-accessory-description">
+              Cozy and comfortable for your furry friend.
+            </p>
+          </div>
+          <div className="pet-accessory">
+            <h4 className="pet-accessory-title">Pet Toys</h4>
+            <button className="pet-accessory-purchase-button">
+              Purchase
+            </button>
+            <p className="pet-accessory-price">$25.00</p>
+            <img
+              src="https://m.media-amazon.com/images/I/61F2H16SVrL._AC_.jpg"
+              width={500}
+              alt="Pet Toys"
+            />
+            <p className="pet-accessory-description">
+              Keep your pet entertained with these fun toys.
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
+
 
   return (
     <div>

@@ -14,7 +14,7 @@ function MarketHome() {
                 <p className='light-text'>Sell</p>
               </Link>
   return(
-    <div className="market-home">
+    <div className="market-home page">
       <h1 className="market-home__greeting">Welcome to the Marketplace</h1>
       <div className="market-home__options">
         <Link to={`/marketplace/buy`} className="market-home__option market-home__option--buy">
