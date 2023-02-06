@@ -74,3 +74,69 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const CREATE_ITEM_TO_SELL = gql`
+  mutation CreateItemToSell(
+    $owner: ID!
+    $title: String!
+    $description: String!
+    $price: String!
+    $photo: String
+    $sellBy: String
+  ) {
+    createItemToSell(
+      owner: $owner
+      title: $title
+      description: $description
+      price: $price
+      photo: $photo
+      sellBy: $sellBy
+    ) {
+      _id
+    }
+  }
+`;
+
+export const PURCHASE_ITEM = gql`
+  mutation PurchaseItem($itemID: ID!) {
+    purchaseItem(itemID: $itemID) {
+      _id
+    }
+  }
+`;
+
+export const REMOVE_ITEM = gql`
+  mutation RemoveItem($itemID: ID!) {
+    removeItem(itemID: $itemID) {
+      _id
+    }
+  }
+`;
+
+export const QUERY_ITEMS_TO_SELL = gql`
+  query items_to_sell($ownerID: ID!) {
+    items_to_sell(ownerID: $ownerID) {
+      _id
+      itemTitle
+      itemPhoto
+      itemDescription
+      itemPrice
+      itemStatus
+    }
+  }
+`;
+
+export const QUERY_ITEMS_TO_BUY = gql`
+  query items_to_buy($ownerID: ID!) {
+    items_to_buy(ownerID: $ownerID) {
+      _id
+      itemTitle
+      itemPhoto
+      itemDescription
+      itemPrice
+      itemOwner {
+        name
+      }
+    }
+  }
+`;
