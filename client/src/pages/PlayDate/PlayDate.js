@@ -12,7 +12,7 @@ function PlayDatePage() {
     const [pet2, setPet2] = useState("");
     const [location, setLocation] = useState("");
     const [activity, setActivity] = useState("");
-    const [selectedDate, setSelectedDate] = useState("");
+    const [date, setDate] = useState("");
     const [playDates, setPlayDates] = useState("");
     const [showCalendar, setShowCalendar] = useState(false);
 
@@ -36,11 +36,11 @@ function PlayDatePage() {
         pet2: pet2,
         location: location,
         activity: activity,
-        date: selectedDate
+        date: date
     };
     createPlayDate({variables});
-    console.log(`Scheduled play date between ${pet1} and ${pet2} at ${location} for ${activity} on ${selectedDate ? selectedDate.toDateString() : 'not selected'}`);
-    console.log(`Selected Dates: ${selectedDate}`);
+    console.log(`Scheduled play date between ${pet1} and ${pet2} at ${location} for ${activity} on ${date.toString()}`);
+    console.log(`Selected Dates: ${date}`);
     // setPlayDates([...playDates, newPlayDate]);
     if (!pet1) return;
 };
@@ -88,12 +88,12 @@ function PlayDatePage() {
                 <input 
                     type="text"
                     id="date"
-                    value={selectedDate ? selectedDate.toDateString() : 'Click to select a date'}
+                    value={date ? date.toString() : 'Click select a date'}
                     onClick={() => setShowCalendar(true)}
                 />
                 {showCalendar && 
                   <MyCalendar 
-                    value={new Date()}
+                    value={date}
                     style={{
                       width: "500px",
                       height: "500px",
@@ -101,8 +101,8 @@ function PlayDatePage() {
                       backgroundColor: "#f2f2f2",
                       borderRadius: "10px"
                     }}
-                    selectedDate={selectedDate}
-                    setSelectedDate={setSelectedDate}
+                    date={date}
+                    setDate={setDate}
                     setShowCalendar={setShowCalendar}
                     />
                 }

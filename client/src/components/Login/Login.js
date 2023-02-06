@@ -38,9 +38,9 @@ function Login() {
             <div className="app-login_page__container" style={{backgroundImage: `url(${image})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              height: "70vh",
-              width: "98vw",
-              opacity: "0.9",
+              // height: "70vh",
+              // width: "98vw",
+              // opacity: "0.9",
             }}> 
               <h1>Log In</h1>
               <form onSubmit={handleFormSubmit}>
