@@ -35,6 +35,10 @@ aside{
   top: 0;
 }
 
+.border-bottom {
+  border-bottom: 5px dotted #000000;
+}
+
 .page {
   align-self: center;
   margin: auto;
