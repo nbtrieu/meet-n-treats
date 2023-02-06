@@ -31,12 +31,140 @@ nav, aside {
   margin: auto;
 }
 
+.explore {
+  /* display: flex; */
+  margin: 0;
+}
+
 .main {
   display: flex;
   flex-direction: row;
   /* align-items: center; */
   /* justify-content: center;
    */
+}
+
+/* STYLING FOR EXPLORE */
+.page.explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 300px;
+}
+
+.page.explore div {
+  margin-bottom: 40px;
+}
+
+.exSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exSection h2 {
+  margin-bottom: 20px;
+}
+
+.exSection ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.exSection ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.exSection ul li img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.exSection ul li h3 {
+  margin-bottom: 10px;
+}
+
+.exSection li {
+  display: inline-block;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  /* border: 1px solid gray; */
+  overflow: hidden;
+  position: relative;
+}
+
+.exSection li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.exSection li h3 {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.exSection li p {
+  padding: 10px;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.exSection li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px gray;
+  z-index: 2;
+}
+
+/* STYLING FOR MARKET */
+.market-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.market-home__greeting {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.market-home__options {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.market-home__option {
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  width: 45%;
+}
+
+.market-home__option--buy {
+  background-color: green;
+}
+
+.market-home__option--sell {
+  background-color: red;
 }
 
 nav {
