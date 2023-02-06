@@ -29,7 +29,7 @@ function Home(props) {
               postsData={post}
             />
             <Link className='' to={`/posts/${post._id}`} style={{ textDecoration: 'none' }}>
-              <p className='light-text'>View and leave comments</p>
+              <p className='light-text'>View post and leave comments</p>
             </Link>
           </div>
       ) || (

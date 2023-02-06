@@ -139,6 +139,10 @@ p {
   line-height: 2rem;
 }
 
+.text-lg {
+  font-size: 1rem;
+}
+
 .text-uppercase {
   text-transform: uppercase !important;
 }
@@ -252,20 +256,6 @@ form label{
   margin:0 1rem;
 }
 
-#loginBtn {
-  margin: 1rem;
-  border-radius: 9px;
-  border: 2px solid #000000;
-  outline: none;
-  cursor: pointer;
-  background-color: #000000;
-  color: #FFFFFF;
-  width: 19rem;
-  height: 2.75rem;
-  justify-content: center;
-  align-items: center;
-}
-
 /* form button #loginBtn{
   margin: 1rem;
   padding: 1rem;
@@ -328,7 +318,7 @@ form label{
 }
 
 .app-postcard_page {
-  width: 60%;
+  width: 40%;
   height: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -391,6 +381,27 @@ box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   width: 92%;
 }
 
+/* DISPLAY */
+.display-none {
+  display: none !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.display-inline-block {
+  display: inline-block !important;
+}
+
+.display-inline {
+  display: inline !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
 /* FORM STYLING */
 button,
 input,
@@ -444,6 +455,14 @@ textarea {
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
+.no-border:focus {
+  outline: none !important;
+}
+
+.negative-margin {
+  margin-left: -15px;
+}
+
 /* BUTTON STYLING */
 .btn {
   text-align: center;
@@ -471,6 +490,10 @@ textarea {
 .btn.btn-sm {
   font-size: 0.85rem;
   padding: 0.3rem 0.9rem;
+}
+
+.btn.btn-xsm {
+  width: 10%;
 }
 
 .btn.btn-lg {
@@ -501,6 +524,15 @@ textarea {
 
 .btn.btn-danger:hover {
   background-color: #ee8294;
+}
+
+.btn.btn-comment {
+  background-color: transparent;
+}
+
+.btn.btn-comment:hover {
+  /* filter: blue; */
+  background-color: #FFE9FA;
 }
 
 .btn.btn-info {

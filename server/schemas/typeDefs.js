@@ -8,7 +8,6 @@ const typeDefs = gql`
     password: String
     pet: Pet
     posts: [Post]
-    comments: [Comment]
   }
 
   type Pet {
@@ -35,7 +34,7 @@ const typeDefs = gql`
 
   type Comment {
     _id: ID
-    commentAuthor: User
+    commentAuthor: String
     commentText: String
     createdAt: String
   }
@@ -55,9 +54,27 @@ const typeDefs = gql`
   type Mutation {
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPet(petOwner: ID!, petName: String!, petAge: String, petType: String!, petBreed: String, petFavFood: String, petFavActivities: String, petBio: String): Pet
-    addPost(postText: String!, postAuthor: ID!, postImageURL: String!): Post
+    addPet(
+      petOwner: ID!, 
+      petName: String!, 
+      petAge: String, 
+      petType: String!, 
+      petBreed: String, 
+      petFavFood: String, 
+      petFavActivities: String, 
+      petBio: String
+    ): Pet
+    addPost(
+      postText: String!, 
+      postAuthor: ID!, 
+      postImageURL: String!
+    ): Post
     removePost(postId: ID!): Post
+    addComment(
+      postId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Post
   }
 `;
 

@@ -12,7 +12,7 @@ function Sidebar(props) {
       <h1 className='app-title'>MEET & TREATS 🐾🍒</h1>
       {props.children}
       <br></br>
-      <button className="btn btn-sm btn-light logout-btn" onClick={logout}>
+      <button className="btn btn-sm btn-light logout-btn ml-5" onClick={logout}>
         Log out
       </button>
     </aside>
