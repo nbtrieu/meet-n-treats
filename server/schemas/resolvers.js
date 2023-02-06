@@ -22,6 +22,10 @@ const resolvers = {
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
     }
+    // Query to get all comments on the single post page:
+    // comments: async () => {
+    //   return Post.find().populate('comments');
+    // }
   },
   Mutation: {
     register: async (parent, { name, email, password}) => {
@@ -80,6 +84,13 @@ const resolvers = {
           new: true,
           runValidators: true,
         }
+      );
+    },
+    removeComment: async (parent, { postId, commentId }) => {
+      return Post.findOneAndUpdate(
+        { _id: postId },
+        { $pull: { comments: { _id: commentId } } },
+        { new: true }
       );
     },
   },
