@@ -166,11 +166,19 @@ aside{
 }
 
 .market-home__option--buy {
-  background-color: green;
+  background-color: rgb(123, 222, 189);
+}
+
+.market-home__option--buy:hover {
+  background-color: rgb(46, 184, 138);
 }
 
 .market-home__option--sell {
-  background-color: red;
+  background-color: rgb(238, 163, 215);
+}
+
+.market-home__option--sell:hover {
+  background-color: rgb(214, 116, 184);
 }
 
 nav {
@@ -804,12 +812,13 @@ textarea {
 }
 
 .btn.btn-link {
-  background-color: #1b89bc;
+  background-color: #1bbc9b;
   color: #ffffff;
+  width: 100%;
 }
 
 .btn.btn-link:hover {
-  background-color: #31a9e1;
+  background-color: #31e1bd;
 }
 
 /* HEIGHT / WIDTH UTILS */

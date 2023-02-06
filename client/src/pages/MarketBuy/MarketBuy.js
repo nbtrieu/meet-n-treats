@@ -40,7 +40,7 @@ function MarketBuy() {
   };
   if (items == null || items.length === 0) {
     return (
-      <div className="market-container page">
+      <div className="market-container page mt-5">
         {/* <h3 className="empty-message">There's nothing to buy!</h3>
         <p className="empty-message">
           Would you like to{" "}

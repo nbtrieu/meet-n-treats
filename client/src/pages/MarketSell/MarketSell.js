@@ -71,7 +71,8 @@ function MarketSell() {
   }
 
   return (
-    <div className="page">
+    <div className="page pet-form-card flex-column align-center">
+      <h2>📈 Make Your Sale</h2>
       <form>
         <input
           name="itemTitle"
@@ -96,10 +97,11 @@ function MarketSell() {
         <br />
         <CloudinaryUploadWidget setPostImageURL={setItemImageURL} />
         <br />
-        <button onClick={(e) => handleCreateItem(e)}>Submit</button>
+        <button onClick={(e) => handleCreateItem(e)} className="btn btn-link">Submit</button>
       </form>
-
-      <h4>Items You Are Selling</h4>
+      <hr></hr>
+      <h4>Check out items you are selling:</h4>
+      <p>Nothing yet...</p>
       {items.map((item) => {
         let price = item?.itemPrice;
         if (price != null && !price.includes(".")) {
