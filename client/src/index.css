@@ -26,6 +26,12 @@ nav, aside {
   align-items: center;
 }
 
+aside{
+  align-items: center;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
 .page {
   align-self: center;
   margin: auto;
