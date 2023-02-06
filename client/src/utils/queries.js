@@ -1,28 +1,51 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
-  query me {
+  query Me {
     me {
       _id
       name
       email
+      password
+      pet {
+        _id
+        petName
+        petAge
+        petType
+        petBreed
+        petFavFood
+        petFavActivities
+        petBio
+      }
     }
   }
 `;
 
 
 export const QUERY_USER = gql`
-  query user {
-    user {
+  query User($id: ID!) {
+    user(_id: $id) {
       _id
       name
-      email
-      pet
+      pet {
+        _id
+        petName
+        petAge
+        petType
+        petBreed
+        petFavFood
+        petFavActivities
+        petBio
+      }
       posts {
         _id
-        postText
         createdAt
-        timestamp
+        postAuthor {
+          name
+          _id
+        }
+        postImageURL
+        postText
       }
     }
   }
@@ -35,6 +58,16 @@ export const QUERY_POSTS = gql`
       postAuthor {
         _id
         name
+        pet {
+          _id
+          petName
+          petAge
+          petType
+          petBreed
+          petFavFood
+          petFavActivities
+          petBio
+        }
       }
       postText
       postImageURL
@@ -71,6 +104,21 @@ export const QUERY_SINGLE_POST = gql`
         commentText
         createdAt
       }
+    }
+  }
+`;
+
+export const QUERY_PET = gql`
+  query Pet($petId: String!) {
+    pet(petId: $petId) {
+      _id
+      petName
+      petAge
+      petType
+      petBreed
+      petFavFood
+      petFavActivities
+      petBio
     }
   }
 `;

@@ -12,8 +12,12 @@ export default function CommentList(props) {
     {comments && 
       comments.map((comment) => (
         <div key={comment._id} className="flex-row justify-space-between negative-bottom-margin">
-          <p><span className='username'>{comment.commentAuthor}</span> {comment.commentText}</p>
-          <p className='light-text text-sm'>{comment.createdAt}</p>
+          <div>
+            <p><span className='username'>{comment.commentAuthor}</span> {comment.commentText}</p>
+          </div>
+          <div className='ml-6'>
+            <p className='light-text text-sm'>{comment.createdAt}</p>
+          </div>
         </div>
       ))}
   </div>

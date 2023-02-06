@@ -17,63 +17,160 @@
   --spacing-five: calc(2.5rem);
 }
 
-/* * {
-  box-sizing: border-box;
-}
-
 html,
 body {
   min-height: 100%;
 }
 
-body {
+nav, aside {
+  align-items: center;
+}
+
+.page {
+  align-self: center;
+  margin: auto;
+}
+
+.explore {
+  /* display: flex; */
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: center;
+   */
+}
+
+/* STYLING FOR EXPLORE */
+.page.explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 300px;
+}
+
+.page.explore div {
+  margin-bottom: 40px;
+}
+
+.exSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exSection h2 {
+  margin-bottom: 20px;
+}
+
+.exSection ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
   margin: 0;
   padding: 0;
-  font-weight: 600;
-  line-height: 1.5;
-  font-size: 18px;
-  letter-spacing: 0.1em;
-  background: var(--primary);
-  color: var(--secondary);
-  font-family: 'Open Sans', sans-serif;
 }
 
-a {
-  color: var(--light);
-  text-decoration: none;
-  opacity: .5;
+.exSection ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 
-a:hover {
-  opacity: 1;
-  transition: all .2s ease-in-out;
+.exSection ul li img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
-aside {
-  background: var(--primary);
+.exSection ul li h3 {
+  margin-bottom: 10px;
 }
 
-aside a {
-  color: var(--light);
-}
-
-aside {
-  height: 200px;
-  position: relative;
+.exSection li {
+  display: inline-block;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  /* border: 1px solid gray; */
   overflow: hidden;
+  position: relative;
+}
+
+.exSection li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.exSection li h3 {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.exSection li p {
+  padding: 10px;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.exSection li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px gray;
   z-index: 2;
 }
 
-aside h1 {
-  position: relative;
-  z-index: 2;
+/* STYLING FOR MARKET */
+.market-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+
+.market-home__greeting {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.market-home__options {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.market-home__option {
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  width: 45%;
+}
+
+.market-home__option--buy {
+  background-color: green;
+}
+
+.market-home__option--sell {
+  background-color: red;
 }
 
 nav {
   position: relative;
-  font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  margin: 30px 20px;
+  margin: -50px -20px;
 }
 
 nav a:hover {
@@ -82,15 +179,14 @@ nav a:hover {
 
 nav li {
   cursor: pointer;
-  text-shadow: 2px 2px 10px rgba(0,0,0, 0.5);
-  margin: 0 50px;
+  margin: 0 50px 0 20px;
 }
 
-.navActive {
-  color: var(--secondary);
-  cursor: default;
-  text-shadow: 3px 3px 15px rgba(255,255,255, .5);
-} */
+nav li:hover {
+  transform: translateX(10px) scale(1.05);
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
+}
 
 h1,
 h2,
@@ -139,6 +235,10 @@ p {
   line-height: 2rem;
 }
 
+/* a:link {
+  text-decoration: none;
+} */
+
 .text-lg {
   font-size: 1rem;
 }
@@ -167,12 +267,21 @@ p {
   text-align: right !important;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 .text-primary {
   color: #2d3e50 !important;
 }
 
 .text-info {
-  color: #1bbc9b !important;
+  color: #66d7c1 !important;
+}
+
+.text-info-field {
+  font-family: 'Noto Sans', sans-serif;
+  /* font-size: 1.25rem; */
 }
 
 .text-danger {
@@ -195,12 +304,16 @@ p {
   color: #ffffff !important;
 }
 
+.text-pink {
+  color: #E59BCE !important;
+}
+
 .text-black {
   color: #000000 !important;
 }
 
 .text-link {
-  color: #77F9EF !important;
+  color: #7de4d0 !important;
 }
 
 .app-title {
@@ -232,7 +345,7 @@ button {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 70vw;
 }
 
 
@@ -322,7 +435,17 @@ form label{
 }
 
 .app-postcard_page {
-  width: 40%;
+  width: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.app-postcard_page_single {
+  width: 90%;
   height: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -385,6 +508,10 @@ form label{
 }
 
 /* DISPLAY */
+.visibility-hidden {
+  visibility: hidden;
+}
+
 .display-none {
   display: none !important;
 }
@@ -435,7 +562,22 @@ textarea {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 150px;
   padding: 30px 30px 50px 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.login-form-card {
+  width: 65%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 30px 50px 30px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -449,7 +591,64 @@ textarea {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 80px;
+  padding: 50px 80px 80px 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.create-form-card {
+  width: 30%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 80px 80px 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.playdate-form-card {
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 80px 80px 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.calendar-card {
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 50px 80px 20px 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+
+.pet-info-card {
+  width: 54%;
+  height: 100%;
+  /* margin-left: auto;
+  margin-right: auto; */
+  padding: 50px 80px 80px 80px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -468,6 +667,10 @@ textarea {
 
 .negative-bottom-margin {
   margin-bottom: -20px;
+}
+
+.negative-top-margin {
+  margin-top: -20px;
 }
 
 .light-background {
@@ -683,6 +886,10 @@ textarea {
   margin-bottom: 1.625rem !important;
 }
 
+.mb-6 {
+  margin-bottom: 5rem !important;
+}
+
 .mb-auto {
   margin-bottom: auto !important;
 }
@@ -710,6 +917,14 @@ textarea {
 
 .mt-5 {
   margin-top: 1.625rem !important;
+}
+
+.mt-6 {
+  margin-top: 5rem !important;
+}
+
+.mt-7 {
+  margin-top: 10rem !important;
 }
 
 .mt-auto {
@@ -755,7 +970,7 @@ textarea {
 }
 
 .ml-2 {
-  margin-left: 0.625rem !important;
+  margin-left: 0.80rem !important;
 }
 
 .ml-3 {
@@ -768,6 +983,14 @@ textarea {
 
 .ml-5 {
   margin-left: 1.625rem !important;
+}
+
+.ml-6 {
+  margin-left: 4rem !important;
+}
+
+.ml-7 {
+  margin-left: 5rem !important;
 }
 
 .ml-auto {
@@ -803,6 +1026,11 @@ textarea {
 .mx-5 {
   margin-right: 1.625rem !important;
   margin-left: 1.625rem !important;
+}
+
+.mx-10 {
+  margin-right: 2rem !important;
+  margin-left: 2rem !important;
 }
 
 .mx-auto {
@@ -919,6 +1147,10 @@ textarea {
 
 .pt-5 {
   padding-top: 1.625rem !important;
+}
+
+.pt-6 {
+  padding-top: 5rem !important;
 }
 
 /* padding-right */
@@ -1114,7 +1346,7 @@ textarea {
 .row {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: row !important; 
   margin-left: -15px;
   margin-right: -15px;
 }

@@ -24,7 +24,7 @@ function Home(props) {
     <div className="flex-column align-center">
       {posts && 
         posts.map((post) => (
-          <div key={post._id} className='app-postcard_page my-5 px-6 py-5'>
+          <div key={post._id} className='app-postcard_page ml-7 my-5 px-6 py-5'>
             <PostCard 
               postsData={post}
             />

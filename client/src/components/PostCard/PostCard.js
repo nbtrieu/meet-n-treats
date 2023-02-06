@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 export default function PostCard(props) {
   const { postsData } = props;
   return (
-    // FRONT-END TODO: Add styling to the div below to look like an Instagram post
     <div className=''>
       <div className='app-postcard_data-author'>
         <div className='app-postcard_data-author-avatar'>
