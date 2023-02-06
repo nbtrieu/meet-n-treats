@@ -39,7 +39,8 @@ function PlayDatePage() {
         date: selectedDate
     };
     createPlayDate({variables});
-    console.log(`Scheduled play date between ${pet1} and ${pet2} at ${location} for ${activity}`);
+    console.log(`Scheduled play date between ${pet1} and ${pet2} at ${location} for ${activity} on ${selectedDate ? selectedDate.toDateString() : 'not selected'}`);
+    console.log(`Selected Dates: ${selectedDate}`);
     // setPlayDates([...playDates, newPlayDate]);
     if (!pet1) return;
 };
@@ -87,9 +88,8 @@ function PlayDatePage() {
                 <input 
                     type="text"
                     id="date"
-                    value={selectedDate ? selectedDate.toDateString() : ''}
+                    value={selectedDate ? selectedDate.toDateString() : 'Click to select a date'}
                     onClick={() => setShowCalendar(true)}
-                    // placeholder="Click to select a date"
                 />
                 {showCalendar && 
                   <MyCalendar 
