@@ -8,17 +8,8 @@ import { Link } from "react-router-dom";
 
 import PostCard from "../../components/PostCard/PostCard";
 
-function Home() {
-  const { loadingPosts, data: postsData } = useQuery(QUERY_POSTS);
-  // NOTE: must be a key-value pair of data: ...
-  console.log('postsData: ', postsData);
-  // console.log(postsData.posts.)
-
-  // Get posts from query:
-  var posts = postsData ? postsData.posts : [];
-  console.log('posts: ', posts);
-
-  console.log('posts: ', posts);
+function Home(props) {
+  const { posts } = props;
 
   const { loading, data } = useQuery(QUERY_ME);
   const me = data?.me || []; // *QUESTION: Why set to empty array instead of empty object? To avoid null or undefined references

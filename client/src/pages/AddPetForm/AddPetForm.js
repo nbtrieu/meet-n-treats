@@ -40,7 +40,6 @@ export default function AddPetForm() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      // console.log('>>>logging petName: ', petName);
       const { data } = await addPet({
         variables: { ...formState }
       });

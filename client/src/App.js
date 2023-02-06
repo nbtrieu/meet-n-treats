@@ -4,22 +4,10 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import AddPetForm from "./pages/AddPetForm/AddPetForm";
-import Create from "./pages/Create";
-import PlayDate from "./pages/PlayDate";
-import Profile from "./pages/Profile";
-import Search from "./pages/Search";
-import SinglePost from "./pages/SinglePost/SinglePost";
-
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Explore from "./pages/Explore";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Nav from "./components/Nav/Nav";
+import MainApp from "./components/MainApp/MainApp";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,25 +31,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <Sidebar>
-            <Nav></Nav>
-          </Sidebar>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/add-pet" element={<AddPetForm />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/playdates" element={<PlayDate />} />
-            <Route path="/profiles" element={<Profile />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/posts/:postId" element={<SinglePost />} />
-          </Routes>
-        </div>
-      </Router>
+      <MainApp />
     </ApolloProvider>
   );
 }
