@@ -260,7 +260,7 @@ form label{
   cursor: pointer;
   background-color: #000000;
   color: #FFFFFF;
-  width: 10rem;
+  width: 19rem;
   height: 2.75rem;
   justify-content: center;
   align-items: center;
@@ -479,18 +479,19 @@ textarea {
 }
 
 .btn.btn-block {
-  width: 100%;
+  width: 92%;
   display: block;
   text-align: center;
+  margin-left: 18px;
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #FFEF9E;
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #FFDBF6;
 }
 
 .btn.btn-danger {

@@ -35,7 +35,7 @@ const resolvers = {
         petType, petBreed, petFavFood, petFavActivities, petBio });
       
       await User.findOneAndUpdate(
-        { name: petOwner },
+        { _id: petOwner },
         { $addToSet: { pet: pet._id } }
       );
 
@@ -61,7 +61,7 @@ const resolvers = {
       const post = await Post.create({ postAuthor, postText, postImageURL });
 
       await User.findOneAndUpdate(
-        { name: postAuthor },
+        { _id: postAuthor },
         { $addToSet: { posts: post._id } }
       );
 

@@ -54,10 +54,14 @@ export default function SinglePost(props) {
   // }
   
   return (
-    <div className='app-postcard_page my-5 px-6 py-5'>
-      <PostCard 
+    <div className="flex-column align-center">
+      <h2>💭 Join the Discussion</h2>
+      <div className='app-postcard_page my-5 px-6 py-5'>
+        <PostCard 
         postsData={post}
       />
+      </div>
+      
       
       {/* TODO: Add CommentList & CommentForm */}
     </div>

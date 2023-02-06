@@ -4,6 +4,7 @@ function Sidebar(props) {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    window.location.replace('/login');
   };
 
   return (
