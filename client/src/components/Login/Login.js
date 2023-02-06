@@ -33,16 +33,17 @@ function Login() {
     }
   };
   return (     
-      <div className="app-login_page">
-            <hr className="lin"></hr>
-            <div className="app-login_page__container" style={{backgroundImage: `url(${image})`,
+      <div className="login-form-card flex-column align-center">
+            <div className="flex-column align-center" style={{backgroundImage: `url(${image})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              height: "70vh",
-              width: "98vw",
+              height: "100vh",
+              width: "65vw",
               opacity: "0.9",
-            }}> 
-              <h1>Log In</h1>
+            }}>
+              <div className="mt-7">
+                <h1>Log In</h1>
+              </div> 
               <form onSubmit={handleFormSubmit}>
                 <input
                   type="email"

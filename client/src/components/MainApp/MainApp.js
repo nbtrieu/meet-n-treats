@@ -27,10 +27,12 @@ export default function MainApp() {
   
   return (
     <Router>
-      <div>
-        <Sidebar>
-          <Nav></Nav>
-        </Sidebar>
+      <div className="main">
+        <navi>
+          <Sidebar>
+            <Nav></Nav>
+          </Sidebar>
+        </navi>
         <Routes>
           <Route path="/" element={<Home posts={posts}/>} />
           <Route path="/login" element={<Login />} />

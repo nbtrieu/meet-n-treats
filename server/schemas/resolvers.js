@@ -19,6 +19,7 @@ const resolvers = {
     posts: async () => {
       return Post.find().populate('comments').populate('postAuthor').sort({ createdAt: -1 });
     },
+    // IGNORE BELOW. Don't need to query single post anymore
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId }).populate('comments').populate('postAuthor');
     }

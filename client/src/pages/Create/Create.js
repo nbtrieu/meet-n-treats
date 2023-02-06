@@ -75,8 +75,10 @@ function CreatePostPage() {
   }
 
   return (
-    <div>
-      <h2>📝 Create a Post</h2>
+    <div className="app-postcard_page page create-form-card flex-column align-start">
+      <div className="text-center mb-5">
+        <h2>📝 Create a Post</h2>
+      </div>
       <p
         className={`m-0 ${
           characterCount === 280 || error ? 'text-danger' : ''
@@ -94,7 +96,7 @@ function CreatePostPage() {
           onChange={handleInputChange}
         />
         <br />
-        <button type="submit">Post</button>
+        <button className="btn btn-info" type="submit">Post</button>
       </form>
     </div>
   );

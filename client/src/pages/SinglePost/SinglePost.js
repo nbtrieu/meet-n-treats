@@ -2,13 +2,11 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
 import CommentList from "../../components/CommentList/CommentList";
-// TODO: import CommentForm here when it's made
 import CommentForm from "../../components/CommentForm/CommentForm";
 
 import Login from "../../components/Login";
 
 import { QUERY_ME } from "../../utils/queries";
-import { QUERY_SINGLE_POST } from "../../utils/queries";
 
 import PostCard from "../../components/PostCard/PostCard";
 
@@ -19,7 +17,7 @@ export default function SinglePost(props) {
   const { postId } = useParams();
   
   const { posts } = props;
-  console.log('logging posts: ', posts);
+  console.log('>>> logging posts: ', posts);
 
   const post = posts.find(post => post._id === postId);
   console.log('>>> logging post: ', post);
@@ -39,15 +37,16 @@ export default function SinglePost(props) {
   // }
   
   return (
-    <div className="flex-column align-center">
-      <h2>💭 Join the Discussion 💭</h2>
-      <div className='app-postcard_page my-5 px-6 py-5'>
+    <div className="flex-column align-center mx-auto py-5">
+      <div className='app-postcard_page_single flex-row mt-5 mb-6 px-3 pt-5'>
         <PostCard postsData={post} />
-        <hr></hr>
-        <div className="">
+        <div className="mx-5 flex-column mt-6 mb-5">
+          <h2>💭 Join the Discussion 💭</h2>
           <CommentList comments={post.comments} />
+          <br></br>
+          <CommentForm postId={postId} />
         </div>
-        <div className="">
+        <div className="visibility-hidden">
           <CommentForm postId={postId} />
         </div>
       </div>
