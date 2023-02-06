@@ -141,9 +141,10 @@ function ProfilePage(props) {
       <div className="text-left mt-5">
         <h2>🖼️ Your Posts</h2>
       </div>
-      {userPosts.length > 0 ? userPosts.map((post) => (
+      <div className="flex-column align-center max-100-vh w-50">
+        {userPosts.length > 0 ? userPosts.map((post) => (
         <div className="row">
-          <div key={post._id} className='app-postcard_page ml-2 my-5 px-6 py-5'>
+          <div key={post._id} className='app-postcard_page ml-2 my-5 mt-6 px-6 py-5'>
             <PostCard 
               postsData={post}
             />
@@ -157,7 +158,7 @@ function ProfilePage(props) {
          <p>No post yet. Create your first post <a href="/create" className="no-underline text-link">here</a>!</p>
         </div>
       )}
-      {/* <h2>Welcome, <span>{posts.postAuthor.name}</span></h2> */}
+      </div>
     </div>
   );
 }
