@@ -10,11 +10,14 @@ import Profile from "../../pages/Profile";
 import Search from "../../pages/Search";
 import Explore from "../../pages/Explore";
 import SinglePost from "../../pages/SinglePost/SinglePost";
+import Market from "../../pages/Market";
+import MarketSell from "../../pages/MarketSell";
 
 import Login from "../Login";
 import Register from "../Register";
 import Sidebar from "../Sidebar";
 import Nav from "../Nav";
+import MarketBuy from "../../pages/MarketBuy";
 
 export default function MainApp() {
   const { loadingPosts, data: postsData } = useQuery(QUERY_POSTS);
@@ -41,6 +44,9 @@ export default function MainApp() {
           <Route path="/playdates" element={<PlayDate />} />
           <Route path="/profiles" element={<Profile />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/marketplace" element={<Market />} />
+          <Route path="/marketplace/buy" element={<MarketBuy />} />
+          <Route path="/marketplace/sell" element={<MarketSell />} />
           <Route path="/posts/:postId" element={<SinglePost posts={posts} />} />
         </Routes>
       </div>

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import MarketBuy from "../MarketBuy";
+import MarketSell from "../MarketSell";
 
 function MarketHome() {
   const buyLink = <Link
@@ -11,7 +13,11 @@ function MarketHome() {
                 style={{ textDecoration: 'none' }}>
                 <p className='light-text'>Sell</p>
               </Link>
-  return <div>{buyLink}{sellLink}</div>;
+  const greeting = `Hello would you like to ${buyLink} or ${sellLink}`;
+  return(
+    <div className="page">
+      Hello would you like to {buyLink} or {sellLink} ?
+    </div>)
 }
 
 export default MarketHome;

@@ -71,7 +71,7 @@ function MarketSell() {
   }
 
   return (
-    <div>
+    <div className="page">
       <form>
         <input
           name="itemTitle"

@@ -40,13 +40,13 @@ function MarketBuy() {
   };
   if (items == null || items.length === 0) {
     return (
-      <span className="username">
+      <div className="username page">
         There's nothing to buy! would you like to{" "}
         <Link to={`/marketplace/sell`} style={{ textDecoration: "none" }}>
           <p className="light-text">Sell</p>
         </Link>{" "}
         something?
-      </span>
+      </div>
     );
   }
 
