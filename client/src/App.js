@@ -9,10 +9,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Create from "./pages/Create";
+import MarketHome from "./pages/Market";
 import PlayDate from "./pages/PlayDate";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import SinglePost from "./pages/SinglePost/SinglePost";
+import MarketBuy from "./pages/Market/MarketBuy";
+import MarketSell from "./pages/Market/MarketSell";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -55,8 +58,11 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/playdates" element={<PlayDate />} />
             <Route path="/profiles" element={<Profile />} />
+            <Route path="/marketplace" element={<MarketHome />} />
             <Route path="/search" element={<Search />} />
             <Route path="/posts/:postId" element={<SinglePost />} />
+            <Route path="/marketplace/buy" element={<MarketBuy />} />
+            <Route path="/marketplace/sell" element={<MarketSell />} />
           </Routes>
         </div>
       </Router>

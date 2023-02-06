@@ -40,6 +40,16 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Item {
+    _id: ID
+    itemTitle: String
+    itemPhoto: String
+    itemDescription: String
+    itemPrice: String
+    itemOwner: User
+    itemStatus: String
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -50,6 +60,9 @@ const typeDefs = gql`
     user(email: String!): User
     posts: [Post]
     post(postId: ID!): Post
+    posts_by_user(userID: ID): [Post]
+    items_to_sell(ownerID: ID): [Item]
+    items_to_buy(ownerID: ID): [Item]
   }
 
   type Mutation {
@@ -57,6 +70,16 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addPost(postText: String!, postAuthor: ID!, postImageURL: String!): Post
     removePost(postId: ID!): Post
+    createItemToSell(
+      owner: ID!
+      title: String!
+      description: String!
+      price: String!
+      photo: String
+      sellBy: String
+    ): Item
+    purchaseItem(itemID: ID!): Item
+    removeItem(itemID: ID!): Item
   }
 `;
 
