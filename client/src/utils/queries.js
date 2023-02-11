@@ -109,7 +109,7 @@ export const QUERY_SINGLE_POST = gql`
 `;
 
 export const QUERY_PET = gql`
-  query Pet($petId: String!) {
+  query Pet($petId: ID!) {
     pet(petId: $petId) {
       _id
       petName

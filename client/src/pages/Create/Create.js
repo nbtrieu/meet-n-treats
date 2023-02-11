@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
-import { QUERY_ME } from "../../utils/queries";
-import Login from "../../components/Login";
 
 import { QUERY_POSTS } from "../../utils/queries";
 import { ADD_POST } from "../../utils/mutations";
@@ -29,20 +27,6 @@ function CreatePostPage() {
       }
     },
   });
-
-  const { loading, data } = useQuery(QUERY_ME);
-  const me = data?.me || []; 
-  // console.log('me: ', me);
-
-  if (me.length === 0) {
-    return (
-      <Login />
-    )
-  }
-
-  // const handleImageChange = (e) => {
-  //   setPostImage(e.target.files[0]);
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();

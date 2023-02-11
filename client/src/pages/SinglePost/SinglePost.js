@@ -3,11 +3,6 @@ import { useParams } from "react-router-dom";
 
 import CommentList from "../../components/CommentList/CommentList";
 import CommentForm from "../../components/CommentForm/CommentForm";
-
-import Login from "../../components/Login";
-
-import { QUERY_ME } from "../../utils/queries";
-
 import PostCard from "../../components/PostCard/PostCard";
 
 export default function SinglePost(props) {
@@ -21,20 +16,6 @@ export default function SinglePost(props) {
 
   const post = posts.find(post => post._id === postId);
   console.log('>>> logging post: ', post);
-
-  // Redirect to log in page if not logged in:
-  const { loading, data } = useQuery(QUERY_ME);
-  const me = data?.me || []; 
-
-  if (me.length === 0) {
-    return (
-      <Login />
-    )
-  }
-
-  // if (loadingPost) {
-  //   return <div>Loading...</div>;
-  // }
   
   return (
     <div className="flex-column align-center mx-auto py-5">

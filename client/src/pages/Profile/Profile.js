@@ -22,122 +22,124 @@ function ProfilePage(props) {
 
   const post = userPosts[0];
   console.log(post);
-  // console.log(post.postAuthor.name);
+  console.log(post.postAuthor.pet._id);
 
-  // Get user info with petId:
-  // const { loadingUser, userData } = useQuery(QUERY_USER, {
-  //   // pass URL parameter
-  //   variables: { userId: new Types.ObjectId('578df3efb618f5141202a196') },
-  // });
-
-  // const user = userData ? userData.user : [];
-  // console.log(user);
-  // console.log('auth...: ', Auth.getUser().data._id)
-  // console.log(typeof(Auth.getUser().data._id))
+  console.log('beginning pet');
 
   // Get pet info:
-  // const { loadingPet, petData } = useQuery(QUERY_PET, {
-  //   // pass petId from userPosts[0].postAuthor.pet._id
-  //   variables: { petId: "63e04e28e660608f2b2eda05" },
-  // });
+  const { loadingPet, data } = useQuery(QUERY_PET, {
+    // pass petId from userPosts[0].postAuthor.pet._id
+    variables: { petId: post.postAuthor.pet._id },
+  });
 
-  // console.log(userPosts[0].postAuthor.pet._id);
-  // console.log(typeof(userPosts[0].postAuthor.pet._id))
-  // console.log(petData);
-  // const pet = petData ? petData.pet : [];
-  // console.log(pet);
+  console.log('pet data: ', data);
 
-  // Authenticate user:
-  const { loading, data } = useQuery(QUERY_ME);
-  const me = data?.me || []; 
+  const pet = data ? data.pet : [];
+  console.log('pet: ', pet);
 
-  if (me.length === 0) {
-    return (
-      <Login />
-    )
-  };
+  // Get logged in user data:
+  const { loading, data: meData } = useQuery(QUERY_ME);
+  const me = meData?.me || []; 
+  // console.log('me: ', me);
 
   return (
     <div className="flex-column page negative-top-margin">
       <div className="text-primary border-bottom">
         <h1>✨ Welcome, <span className="text-pink">{me.name} ✨</span></h1>
       </div>
-      {/* <div className="text-left">
-        <h2>🪪 Your Pet Profile</h2>
+      <div className="text-left mt-5">
+        <h2>🪪 Your Profile</h2>
+      </div>
+      <div className="user-info-card my-5 flex-column">
+        <div className="flex-row mb-2">
+          <h4 className="text-info-field text-info">Name: </h4>
+          <span className="ml-5">
+            <h4>{me.name}</h4>
+          </span>
+        </div>
+        <div className="flex-row mb-2">
+          <h4 className="text-info-field text-info">Email: </h4>
+          <span className="ml-5">
+            <h4>{me.email}</h4>
+          </span>
+        </div>
+      </div>
+      <div className="text-left">
+        <h2>🐾 Your Pet Profile</h2>
       </div>
       <div className="pet-info-card mt-5 flex-column">
-        {post.postAuthor.pet.petName ? (
+        {pet.petName ? (
           <div className="flex-row mb-2">
             <h4 className="text-info-field text-info">Name: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petName}</h4>
+              <h4>{pet.petName}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
-        {post.postAuthor.pet.petAge ? (
+        {pet.petAge ? (
           <div className="flex-row mb-2">
             <h4 className="text-info-field text-info">Age: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petAge}</h4>
+              <h4>{pet.petAge}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
-        {post.postAuthor.pet.petType ? (
+        {pet.petType ? (
           <div className="flex-row mb-2">
             <h4 className="text-info-field text-info">Type: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petType}</h4>
+              <h4>{pet.petType}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
-        {post.postAuthor.pet.petBreed ? (
+        {pet.petBreed ? (
           <div className="flex-row mb-2">
             <h4 className="text-info-field text-info">Breed: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petBreed}</h4>
+              <h4>{pet.petBreed}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
-        {post.postAuthor.pet.petFavFood ? (
+        {pet.petFavFood ? (
           <div className="flex-row mb-2">
             <h4 className="text-info-field text-info">FavFood: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petFavFood}</h4>
+              <h4>{pet.petFavFood}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
-        {post.postAuthor.pet.petFavActivities ? (
+        {pet.petFavActivities ? (
           <div className="flex-row mb-2">
             <h4 className="text-info-field text-info">FavActivities: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petFavActivities}</h4>
+              <h4>{pet.petFavActivities}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
-        {post.postAuthor.pet.petBio ? (
+        {pet.petBio ? (
           <div className="flex-row">
             <h4 className="text-info-field text-info">Bio: </h4>
             <span className="ml-5">
-              <h4>{post.postAuthor.pet.petBio}</h4>
+              <h4>{pet.petBio}</h4>
             </span>
           </div>
         ) : (
           <div className="display-none"></div>
         )}
       
-      </div> */}
+      </div>
       <div className="text-left mt-5">
         <h2>🖼️ Your Posts</h2>
       </div>
