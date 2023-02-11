@@ -3,9 +3,6 @@ import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { ADD_PET } from "../../utils/mutations";
 
-import { QUERY_ME } from "../../utils/queries";
-import Login from "../../components/Login";
-
 import Auth from '../../utils/auth';
 
 export default function AddPetForm() {
@@ -26,16 +23,6 @@ export default function AddPetForm() {
     console.log(name, value);
     setFormState({ ...formState, [name]: value });
   };
-
-  // Authenticate user:
-  const { loading, data: meData } = useQuery(QUERY_ME);
-  const me = meData?.me || []; 
-
-  if (me.length === 0) {
-    return (
-      <Login />
-    )
-  }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();

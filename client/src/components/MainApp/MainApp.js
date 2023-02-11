@@ -14,6 +14,7 @@ import Market from "../../pages/Market";
 import MarketSell from "../../pages/MarketSell";
 import MarketBuy from "../../pages/MarketBuy";
 
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Login from "../Login";
 import Register from "../Register";
 import Sidebar from "../Sidebar";
@@ -37,19 +38,21 @@ export default function MainApp() {
           </Sidebar>
         </navi>
         <Routes>
-          <Route path="/" element={<Home posts={posts} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/add-pet" element={<AddPetForm />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/playdates" element={<PlayDate />} />
-          <Route path="/profiles" element={<Profile posts={posts} />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/marketplace" element={<Market />} />
-          <Route path="/marketplace/buy" element={<MarketBuy />} />
-          <Route path="/marketplace/sell" element={<MarketSell />} />
-          <Route path="/posts/:postId" element={<SinglePost posts={posts} />} />
+          <Route path="/" element={<PrivateRoute />}>
+            <Route path="/" element={<Home posts={posts} />} />
+            <Route path="/profiles" element={<Profile posts={posts} />} />
+            <Route path="/add-pet" element={<AddPetForm />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/playdates" element={<PlayDate />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/marketplace" element={<Market />} />
+            <Route path="/marketplace/buy" element={<MarketBuy />} />
+            <Route path="/marketplace/sell" element={<MarketSell />} />
+            <Route path="/posts/:postId" element={<SinglePost posts={posts} />} />
+          </Route>
         </Routes>
       </div>
     </Router>
