@@ -42,14 +42,33 @@ function ProfilePage(props) {
   const me = meData?.me || []; 
   // console.log('me: ', me);
 
+  const handleClickUser = async (event) => {
+    event.preventDefault();
+    window.location.replace('/profiles/user/edit');
+    // *BUG: why is it going back to home instead of profiles when click back???
+  }
+
+  const handleClickPet = async (event) => {
+    event.preventDefault();
+    window.location.replace('/profiles/pet/edit');
+    // *BUG: why is it going back to home instead of profiles when click back???
+  }
+
   return (
     <div className="flex-column page negative-top-margin">
       <div className="text-primary border-bottom">
         <h1>✨ Welcome, <span className="text-pink">{me.name} ✨</span></h1>
       </div>
-      <div className="text-left mt-5">
-        <h2>🪪 Your Profile</h2>
+      
+      <div className="row">
+        <div className="col text-left mt-5">
+          <h2>🪪 Your Profile</h2>
+        </div>
+        <div className="col">
+          <button className="btn btn-info mt-4" type="submit" onClick={handleClickUser}>Edit</button>
+        </div>
       </div>
+      
       <div className="user-info-card my-5 flex-column">
         <div className="flex-row mb-2">
           <h4 className="text-info-field text-info">Name: </h4>
@@ -64,9 +83,16 @@ function ProfilePage(props) {
           </span>
         </div>
       </div>
-      <div className="text-left">
-        <h2>🐾 Your Pet Profile</h2>
+
+      <div className="row">
+        <div className="col text-left mt-5">
+          <h2>🐾 Your Pet Profile</h2>
+        </div>
+        <div className="col">
+          <button className="btn btn-info mt-4" type="submit" onClick={handleClickPet}>Edit</button>
+        </div>
       </div>
+
       <div className="pet-info-card mt-5 flex-column">
         {pet.petName ? (
           <div className="flex-row mb-2">

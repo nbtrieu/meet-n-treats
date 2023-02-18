@@ -80,7 +80,7 @@ function CreatePostPage() {
           onChange={handleInputChange}
         />
         <br />
-        <button className="btn btn-block" type="submit">Post</button>
+        <button className="btn btn-info" type="submit">Post</button>
       </form>
     </div>
   );
