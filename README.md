@@ -53,7 +53,7 @@ Allows users to add
 pets for play dates, potential pet adoptions and owner registration.
  
 
-##  Search
+##  Search (Still In Development)
  
 Users can search other pets online as well
 as filter through categories based on pet preference. Through this
@@ -62,14 +62,14 @@ search environment based on personal preference.
 
 
 
-## Explore
+## Explore (Still In Development)
  
 The app will recommend end-users popular
 pet owners, pets based on preference, and broader pet suggestions so
 that users will be able to be exposed to variety of pets.
 
 
-## Play Dates
+## Play Dates (Still In Development)
  
 End-users will be able to search for play
 dates based on specified conditions so that pet owners can socialize
@@ -85,7 +85,7 @@ on registrated information. End-user may be able to update their
 information for others to see. 
 
 
-## Market Place 
+## Market Place (Still In Development)
  
 Search for pets
 online for adoption as well as temporary pet-sitting. This functionality
@@ -98,7 +98,7 @@ the recognition for the potential for pet owners to take more
 responsibility for their pets in the case of adoption. 
 
 
-## Adoption
+## Adoption (Still In Development)
  
 Allows users to able to specify adoption
 preferences so that users can register their pets for adoption.
